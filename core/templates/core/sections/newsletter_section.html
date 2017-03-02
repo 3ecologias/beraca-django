@@ -1,0 +1,33 @@
+<!-- Newsletter Section -->
+<section class="small-section bg-dark-alfa-30" data-background="{% static 'images/beraca_newsletter.jpg' %}">
+    <div class="container relative">
+
+        <form class="form align-center" id="mailchimp">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+
+                    <div class="newsletter-label font-alt">
+                        Gostaria de receber nossa newsletter?
+                    </div>
+
+                    <div class="mb-20">
+                        <input placeholder="Seu email" class="newsletter-field form-control input-md round mb-xs-10" type="email" pattern=".{5,100}" required/>
+
+                        <button type="submit" class="btn btn-mod btn-medium btn-round mb-xs-10">
+                            Submeter
+                        </button>
+                    </div>
+
+                    <div class="form-tip">
+                        <i class="fa fa-info-circle"></i> Confie na gente, também não gostamos de spam.
+                    </div>
+
+                    <div id="subscribe-result"></div>
+
+                </div>
+            </div>
+        </form>
+
+    </div>
+</section>
+<!-- End Newsletter Section -->

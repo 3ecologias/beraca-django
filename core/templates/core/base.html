@@ -1,0 +1,80 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Instituto Beraca</title>
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta charset="utf-8">
+        <meta name="author" content="3Ecologias.net">
+        <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+
+        <!-- Favicons -->
+        <link rel="shortcut icon" href="images/favicon.png">
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <link rel="stylesheet" href="{% static 'css/style-responsive.css' %}">
+        <link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/vertical-rhythm.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
+        <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+        <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+
+        {% block extrastyles %}
+        {% endblock extrastyles %}
+    </head>
+    <body class="appear-animate">
+
+        <!-- Page Loader -->
+        <div class="page-loader">
+            <div class="loader">só 8 segundinhos...</div>
+        </div>
+        <!-- End Page Loader -->
+
+        <!-- Page Wrap -->
+        <div class="page" id="top">
+          {% block content %}
+
+            <!-- Footer -->
+            {% block footer %}
+              {% include 'core/partials/footer.html' %}
+            {% endblock footer %}
+
+          {% endblock content %}
+        </div>
+        <!-- End Page Wrap -->
+
+
+        <!-- JS -->
+        <script type="text/javascript" src="{% static 'js/jquery-1.11.2.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/SmoothScroll.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/jquery.scrollTo.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/jquery.localScroll.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/jquery.viewport.mini.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/jquery.countTo.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/jquery.appear.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/jquery.sticky.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/jquery.parallax-1.1.3.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/jquery.fitvids.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/owl.carousel.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/gmap3.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/wow.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/masonry.pkgd.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/jquery.simple-text-rotator.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/all.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/contact-form.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/jquery.ajaxchimp.min.js' %}"></script>
+        <!--[if lt IE 10]><script type="text/javascript" src="js/placeholder.js"></script><![endif]-->
+        {% block extrascripts %}
+        {% endblock extrascripts %}
+
+    </body>
+</html>

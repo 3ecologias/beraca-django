@@ -1,0 +1,49 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+
+  <!-- Fullwidth Slider -->
+  {% block slider %}
+    {% include 'core/partials/fullwidth_slider.html' %}
+  {% endblock slider %}
+
+  <!-- Navigation Menu -->
+  {% block navigation %}
+    {% include 'core/partials/navpanel.html' %}
+  {% endblock navigation %}
+
+  <!-- About Section -->
+  {% block about %}
+    {% include 'core/sections/about_section.html' %}
+  {% endblock about %}
+
+  <!-- Divider -->
+  <hr class="mt-0 mb-0 "/>
+  <!-- End Divider -->
+
+  <!-- Services Section -->
+  {% block services %}
+    {% include 'core/sections/services_section.html' %}
+  {% endblock services %}
+
+  <!-- Call Action Section -->
+  {% block call_actions %}
+    {% include 'core/sections/call_section.html' %}
+  {% endblock call_actions %}
+
+  <!-- Blog Section -->
+  {% block blog %}
+    {% include 'core/sections/blog_section.html' %}
+  {% endblock blog %}
+
+  <!-- Contact Section -->
+  {% block contact %}
+    {% include 'core/sections/contact_section.html' %}
+  {% endblock contact %}
+
+  {# Footer#}
+  {% block footer %}
+    {{block.super}}
+  {% endblock footer %}
+
+{% endblock content %}

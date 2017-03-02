@@ -1,0 +1,35 @@
+{% load staticfiles %}
+
+<!-- Fullwidth Slider -->
+<div class="home-section fullwidth-slider-fade bg-dark" id="home">
+
+  <!-- Slide Item -->
+  {% for slide in slide_itens %}
+  <section class="home-section bg-scroll bg-dark-lighter" data-background="{{slide.slide_image.url}}">
+      <div class="js-height-full container">
+          <!-- Hero Content -->
+          <div class="home-content">
+              <div class="home-text">
+                  <h1 class="hs-line-8 no-transp font-alt mb-50 mb-xs-30">
+                      {{slide.first_phrase}}
+                  </h1>
+
+                  <h2 class="hs-line-14 font-alt mb-50 mb-xs-30">
+                      {{slide.second_phrase}}
+                  </h2>
+
+                  <div class="local-scroll">
+                      <a href="#about" class="btn btn-mod btn-border-w btn-medium btn-round hidden-xs">Saiba mais</a>
+                    </div>
+
+              </div>
+          </div>
+          <!-- End Hero Content -->
+
+      </div>
+  </section>
+  <!-- End Slide Item -->
+  {% endfor %}
+
+</div>
+<!-- End Fullwidth Slider -->

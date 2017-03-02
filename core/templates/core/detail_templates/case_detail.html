@@ -1,0 +1,179 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+  {% block navigation %}
+    {% include 'core/partials/navpanel.html' %}
+  {% endblock navigation %}
+
+
+  <section class="page-section bg-dark-alfa-30 parallax-3" data-background="{{object.images.all.0.image.url}}">
+      <div class="relative container align-left">
+
+          <div class="row">
+
+              <div class="col-md-8">
+                  <h1 class="hs-line-11 font-alt mb-20 mb-xs-0">{{object.title}}</h1>
+                  <div class="hs-line-4 font-alt">
+                      {{object.sub_title}}
+                  </div>
+              </div>
+
+              </div>
+          </div>
+
+      </div>
+  </section>
+
+  <section class="page-section">
+      <div class="container relative">
+          <!-- Features Grid -->
+          <div class="row alt-features-grid mb-80 mb-xs-40">
+
+          <!-- Work Gallery -->
+          <div class="work-full-media mb-80 mb-xs-40">
+
+              <ul class="clearlist work-full-slider owl-carousel">
+                  {% for image in object.images.all %}
+                  <li>
+                      <img src="{{image.image.url}}" alt=""/>
+                  </li>
+                  {% endfor %}
+              </ul>
+
+          </div>
+          <!-- End Work Gallery -->
+
+
+          <!-- Features Grid -->
+          <div class="row multi-columns-row alt-features-grid mb-80 mb-xs-40">
+
+              <!-- Features Item -->
+              <div class="col-sm-6 col-md-4 col-lg-4">
+                  <div class="alt-features-item align-center">
+                      <h3 class="alt-features-title font-alt">1. Estudo do caso</h3>
+                      <div class="alt-features-descr align-left">
+                          {{object.study}}
+                      </div>
+                  </div>
+              </div>
+              <!-- End Features Item -->
+
+              <!-- Features Item -->
+              {% if object.results %}
+              <div class="col-sm-6 col-md-4 col-lg-4">
+                  <div class="alt-features-item align-center">
+                      <h3 class="alt-features-title font-alt">2. Resultado</h3>
+                      <div class="alt-features-descr align-left">
+                          Proin fringilla augue at maximus vestibulum.
+                          Nam pulvinar vitae neque et porttitor. Praesent sed
+                          nisi eleifend, lorem fermentum orci sit amet, iaculis libero.
+                      </div>
+                  </div>
+              </div>
+              <!-- End Features Item -->
+              {% endif %}
+
+              <!-- Features Item -->
+              {% if object.experience %}
+              <div class="col-sm-6 col-md-4 col-lg-4">
+                  <div class="alt-features-item align-center">
+                      <h3 class="alt-features-title font-alt">3. Experiência</h3>
+                      <div class="alt-features-descr align-left">
+                          Curabitur iaculis accumsan augue, nec finibus mauris pretium eu.
+                          Duis placerat ex gravida nibh tristique porta. Nulla facilisi.
+                          Suspendisse ultricies eros blandit.
+                      </div>
+                  </div>
+              </div>
+              {% endif %}
+              <!-- End Features Item -->
+
+          </div>
+
+
+          <!-- Divider -->
+         <hr class="mb-70 mb-xs-30"/>
+         <!-- End Divider -->
+
+
+          <div class="section-text mb-60 mb-sm-40">
+              <div class="row">
+
+                  <div class="col-md-4 mb-sm-50 mb-xs-30">
+
+                      <!-- Project Detail -->
+                      <div class="work-detail">
+                          <h5 class="font-alt mt-0 mb-20">Detalhes do projeto</h5>
+                          <div class="work-full-detail">
+                              <p>
+                                  <strong>Cliente:</strong>
+                                  Votorantim
+                              </p>
+                              <p>
+                                  <strong>Data:</strong>
+                                  Fevereiro, 2017
+                              </p>
+                              <p>
+                                  <strong>Online:</strong>
+                                  <a href="#" target="_blank">www.rhythm.bestlooker.pro</a>
+                              </p>
+                          </div>
+                      </div>
+                      <!-- End Project Detail -->
+
+                  </div>
+
+                  <div class="col-md-4 col-sm-6 mb-sm-50 mb-xs-30">
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit. In maximus ligula semper metus pellentesque mattis. Maecenas  volutpat, diam enim sagittis quam, id porta quam. Sed id dolor consectetur fermentum nibh volutpat, accumsan purus.
+                  </div>
+
+                  <div class="col-md-4 col-sm-6 mb-sm-50 mb-xs-30">
+                      Etiam sit amet fringilla lacus. Pellentesque suscipit ante at ullamcorper pulvinar neque porttitor. Integer lectus. Praesent sed nisi eleifend, fermentum orci amet, iaculis libero. Donec vel ultricies purus. Nam dictum sem, eu aliquam.
+                  </div>
+
+              </div>
+          </div>
+
+      </div>
+  </section>
+  <!-- End Section -->
+
+
+  <!-- Divider -->
+  <hr class="mt-0 mb-0 "/>
+  <!-- End Divider -->
+
+
+
+  <!-- Divider -->
+  <hr class="mt-0 mb-0 "/>
+  <!-- End Divider -->
+
+
+  <!-- Work Navigation -->
+  <div class="work-navigation clearfix">
+
+      {% if object.get_prev %}
+        <a href="{% url 'core:detail' object.get_prev.id %}" class="work-prev"><span><i class="fa fa-chevron-left"></i>&nbsp;Previous</span></a>
+      {% else %}
+        <a class="work-prev">&nbsp;</a>
+      {% endif %}
+      <a href="cases.html" class="work-all"><span><i class="fa fa-times"></i>&nbsp;Ver todos</span></a>
+
+      {% if object.get_next %}
+        <a href="{% url 'core:detail' object.get_next.id %}" class="work-next"><span>Next&nbsp;<i class="fa fa-chevron-right"></i></span></a>
+      {% else %}
+        <a class="work-prev">&nbsp;</a>
+      {% endif %}
+  </div>
+  <!-- End Work Navigation -->
+
+
+  <!-- Divider -->
+  <hr class="mt-0 mb-0 "/>
+  <!-- End Divider -->
+
+  {% block footer %}
+    {{block.super}}
+  {% endblock footer %}
+{% endblock content %}
