@@ -3,29 +3,21 @@
 <!-- Call Action Section -->
 
 <section class="page-section pt-0 pb-0 banner-section bg-dark-alfa-30" data-background="{% static 'images/beraca_sementes.jpg' %}" id="portfolio">
-    <div class="container relative">
-
-        <div class="row">
-
-            <div class="col-sm-6">
-
-                <div class="mt-140 mt-lg-80 mb-140 mb-lg-80">
-                    <div class="banner-content">
-                        <h3 class="banner-heading font-alt">onde atuamos</h3>
-                        <div class="banner-decription">
-                            Atuamos em comunidades que complementar com o texto sobre a comunidade que atuamos e tudo o mais que fazemos na atuação.
-                        </div>
-                        <div class="local-scroll">
-                            <a href="cases.html" class="btn btn-mod btn-w btn-medium btn-round">Veja nosso portfólio</a>
-                        </div>
-                    </div>
-                </div>
-
+  <div class="container relative">
+    <div class="row">
+      <div class="col-sm-6">        
+        <div class="mt-140 mt-lg-80 mb-140 mb-lg-80">
+          <div class="banner-content">
+            <h3 class="banner-heading font-alt">onde atuamos</h3>
+            <div class="banner-decription">
+              Atuamos em comunidades que complementar com o texto sobre a comunidade que atuamos e tudo o mais que fazemos na atuação.
             </div>
-
-
-
+            <div class="local-scroll">
+              <a href="{% url 'core:cases' %}" class="btn btn-mod btn-w btn-medium btn-round">Veja nosso portfólio</a>
+            </div>
+          </div>
         </div>
-
+      </div>
     </div>
+  </div>
 </section>

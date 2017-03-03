@@ -3,6 +3,7 @@
 from __future__ import unicode_literals
 
 from django.db import models
+from ckeditor.fields import RichTextField
 
 class Fullwidth_slider_item(models.Model):
     first_phrase = models.CharField("Primeira frase (menor)", max_length=50, blank=False)
@@ -17,7 +18,7 @@ class Fullwidth_slider_item(models.Model):
         verbose_name_plural = "Slides"
 
 def generate_filename_miniature(self, filename):
-    url = "Portfolio/miniatura/%s/%s" % (self.title, filename)
+    url = "Cases/miniaturas/%s/%s" % (self.title, filename)
     return url
 
 class PortfolioItem(models.Model):
@@ -58,6 +59,7 @@ class PortfolioItem(models.Model):
     class Meta:
         verbose_name="Portfolio/case"
         verbose_name_plural="Cases"
+        ordering = ['-date']
 
 def generate_filename(self, filename):
     url = "Portfolio/%s/%s" % (self.portfolio.title, filename)
@@ -69,3 +71,52 @@ class PortfolioImages(models.Model):
 
     def __unicode__(self):
         return self.portfolio.title
+
+def generate_filename_miniature(self, filename):
+    url = "Posts/miniaturas/%s/%s" % (self.title, filename)
+    return url
+
+class BlogPost(models.Model):
+    #common
+
+    title = models.CharField("Título", max_length=20, blank=False)
+    sub_title = models.CharField("Sub-título", max_length=20, blank=False, null=True)
+    intro = models.TextField("Introdução", blank=False)
+    content = RichTextField("Corpo do texto", blank=False)
+    date = models.DateField(auto_now=True)
+    author = models.CharField("Autor", max_length=500, blank=True)
+
+    #miniature
+    miniature = models.ImageField("Miniatura", upload_to=generate_filename_miniature, blank=False)
+    tag = models.CharField("Tag para filtro", max_length=20, blank=False)
+
+    def __unicode__(self):
+        return self.title
+
+    def get_next(self):
+        next = BlogPost.objects.filter(id__gt=self.id)
+        if next:
+          return next.first()
+        return False
+
+    def get_prev(self):
+        prev = BlogPost.objects.filter(id__lt=self.id).order_by('-id')
+        if prev:
+          return prev.first()
+        return False
+
+    class Meta:
+        verbose_name="Blog post"
+        verbose_name_plural="Posts"
+        ordering = ['-date']
+
+def generate_filename(self, filename):
+    url = "Posts/%s/%s" % (self.post.title, filename)
+    return url
+
+class BlogImages(models.Model):
+    post = models.ForeignKey(BlogPost, related_name='images')
+    image = models.ImageField("Imagem", upload_to=generate_filename)
+
+    def __unicode__(self):
+        return self.post.title

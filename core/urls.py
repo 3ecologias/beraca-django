@@ -12,6 +12,8 @@ urlpatterns = [
     url(r'^about/$', views.AboutView.as_view(), name='about'),
     url(r'^cases/$', views.CasesView.as_view(), name='cases'),
     url(r'^cases/detail/(?P<pk>\d+)$', views.CaseDetailView.as_view(), name='detail'),
+    url(r'^blog/$', views.BlogListView.as_view(), name='blog'),
+    url(r'^blog/detail/(?P<pk>\d+)$', views.BlogDetailView.as_view(), name='post_detail'),
 ]
 
 

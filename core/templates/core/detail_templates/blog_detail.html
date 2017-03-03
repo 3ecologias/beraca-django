@@ -1,0 +1,62 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+  {% include 'core/partials/navpanel_with_links.html' %}
+  {% include 'core/partials/blog_header.html' %}
+  <!-- Section -->
+  <section class="page-section">
+    <div class="container relative">
+      <div class="row">
+        <!-- Content -->
+        <div class="col-sm-10 col-sm-offset-1">
+          <!-- Post -->
+          <div class="blog-item mb-80 mb-xs-40">
+            <!-- Text -->
+            <div class="blog-item-body">
+              <h1 class="mt-0 font-alt">{{object.title}}</h1>
+              <div class="lead">
+                <p>
+                  {{object.sub_title}}
+                </p>
+              </div>
+              <!-- End Text -->
+              <!-- Media Gallery -->
+              <div class="blog-media mt-40 mb-40 mb-xs-30">
+                <ul class="clearlist content-slider">
+                  {% for image in object.images.all%}
+                  <li>
+                    <img src="{{image.image.url}}" alt="" />
+                  </li>
+                  {% endfor %}
+                </ul>
+              </div>
+              <p>
+                {{object.intro}}
+              </p>
+              <p>
+                {{object.content|safe}}
+              </p>
+            </div>
+            <!-- End Text -->
+          </div>
+          <!-- End Post -->
+          <!-- Prev/Next Post -->
+          <div class="clearfix mt-40">
+            {% if object.get_prev %}
+              <a href="{% url 'core:post_detail' object.get_prev.id %}" class="blog-item-more left"><i class="fa fa-angle-left"></i>&nbsp;Notícia anterior</a>
+            {% endif %}
+            {% if object.get_next %}
+              <a href="{% url 'core:post_detail' object.get_next.id %}" class="blog-item-more right">Próxima notícia&nbsp;<i class="fa fa-angle-right"></i></a>
+            {% endif %}
+          </div>
+          <!-- End Prev/Next Post -->
+        </div>
+        <!-- End Content -->
+      </div>
+    </div>
+  </section>
+  <!-- End Section -->
+  {% block footer %}
+    {{block.super}}
+  {% endblock footer %}
+{% endblock content %}

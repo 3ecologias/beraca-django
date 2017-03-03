@@ -1,117 +1,102 @@
 {% extends 'core/base.html' %}
 {% load staticfiles %}
 
-{% block extrastyles %}
-  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.32.1/mapbox-gl.js'></script>
-  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.32.1/mapbox-gl.css' rel='stylesheet' />
-  <style>
-    body { margin:0; padding:0; }
-    #map { position:absolute; top:0; bottom:0; width:100%; }
-  </style>
-{% endblock extrastyles %}
+  {% block extrastyles %}
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.32.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.32.1/mapbox-gl.css' rel='stylesheet' />
+    <style>
+      body { margin:0; padding:0; }
+      #map { position:absolute; top:0; bottom:0; width:100%; }
+    </style>
+  {% endblock extrastyles %}
 
 {% block content %}
-  {% block navigation %}
-    {% include 'core/partials/navpanel.html' %}
-  {% endblock navigation %}
+  {% include 'core/partials/navpanel_with_links.html' %}
+
 
   <!-- Head Section -->
   <section class="page-section bg-dark-alfa-30 parallax-3" data-background="{% static 'images/beraca_sementes.jpg' %}">
-      <div class="relative container align-left">
-
-          <div class="row">
-
-              <div class="col-md-8">
-                  <h1 class="hs-line-11 font-alt mb-20 mb-xs-0">Portfólio de ações</h1>
-                  <div class="hs-line-4 font-alt">
-                      Atuamos com foco no desenvolvimento local sustentável
-                  </div>
-              </div>
-
-              </div>
-          </div>
-
-      </div>
-  </section>
-  <!-- End Head Section -->
-
-
-  <!-- Portfolio Section -->
-  <section class="page-section">
-      <div class="container relative">
-
-        <!-- Map Section -->
-        <div class="row">
-          <div id='mapbox-control' class="col-md-7">
-            <div id='map'></div>
-          </div>
-          <script>
-            mapboxgl.accessToken = 'pk.eyJ1IjoicnVpeiIsImEiOiJrVVcwQXFnIn0.6wBy9NLB7MVzx1_YMTHC6g';
-            var map = new mapboxgl.Map({
-              container: 'map', // container id
-              style: 'mapbox://styles/ruiz/ciz9vm4m3004q2rnqesa11o4w', //stylesheet location
-              center: [-58.253,-14.380], // starting position
-              zoom: 2.9 // starting zoom
-            });
-            map.scrollZoom.disable();
-          </script>
-          <div id='mapbox-side' class="col-md-4">
-            <h3 class="hs-line-11 font-alt mb-20 mb-xs-0">
-                Ações nas áreas de regularização fundiária, regularização ambiental e ajuda humanitária.
-            </h3>
+    <div class="relative container align-left">
+      <div class="row">
+        <div class="col-md-8">
+          <h1 class="hs-line-11 font-alt mb-20 mb-xs-0">Portfólio de ações</h1>
+          <div class="hs-line-4 font-alt">
+            Atuamos com foco no desenvolvimento local sustentável
           </div>
         </div>
-          <!-- Works Filter -->
-          <div class="works-filter font-alt align-center">
-              <a href="#" class="filter active" data-filter="*">Todos</a>
-              <a href="#branding" class="filter" data-filter=".branding">Fundiária</a>
-              <a href="#design" class="filter" data-filter=".design">Ambiental</a>
-              <a href="#photography" class="filter" data-filter=".photography">Humanitária</a>
-          </div>
-          <!-- End Works Filter -->
-
-          <!-- Works Grid -->
-          <ul class="works-grid work-grid-2 work-grid-gut clearfix font-alt hover-white" id="work-grid">
-
-              <!-- Work Item (Lightbox) -->
-              {% for case in cases %}
-                <li class="work-item mix photography">
-                    <a href="{% url 'core:detail' case.id %}" class="work-ext-link">
-                        <div class="work-img">
-                            <img src="{{case.miniature.url}}" alt="Work" />
-                        </div>
-                        <div class="work-intro">
-                            <h3 class="work-title">{{case.title}}</h3>
-                            <div class="work-descr">
-                                {{case.sub_title}}
-                            </div>
-                        </div>
-                    </a>
-                </li>
-              {% endfor %}
-              <!-- End Work Item -->
-          <!-- End Works Grid -->
-
       </div>
+    </div>
+  </div>
   </section>
-  <!-- End Portfolio Section -->
-
-
-  <!-- Call Action Section -->
-  <section class="small-section bg-yellow-dg">
-      <div class="container relative">
-
-          <div class="align-center">
-              <h3 class="banner-heading font-alt">Gostou do nosso trabalho?</h3>
-              <div>
-                  <a href="contact.html" class="btn btn-mod btn-w btn-medium btn-round">Converse conosco!</a>
+  <!-- End Head Section -->
+  <!-- Portfolio Section -->
+  <section class="page-section">
+    <div class="container relative">
+      <!-- Map Section -->
+      <div class="row">
+        <div id='mapbox-control' class="col-md-7">
+          <div id='map'></div>
+        </div>
+        <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoicnVpeiIsImEiOiJrVVcwQXFnIn0.6wBy9NLB7MVzx1_YMTHC6g';
+        var map = new mapboxgl.Map({
+          container: 'map', // container id
+          style: 'mapbox://styles/ruiz/ciz9vm4m3004q2rnqesa11o4w', //stylesheet location
+          center: [-58.253,-14.380], // starting position
+          zoom: 2.9 // starting zoom
+        });
+        map.scrollZoom.disable();
+        </script>
+        <div id='mapbox-side' class="col-md-4">
+          <h3 class="hs-line-11 font-alt mb-20 mb-xs-0">
+            Ações nas áreas de regularização fundiária, regularização ambiental e ajuda humanitária.
+          </h3>
+        </div>
+      </div>
+      <!-- Works Filter -->
+      <div class="works-filter font-alt align-center">
+        <a href="#" class="filter active" data-filter="*">Todos</a>
+        <a href="#branding" class="filter" data-filter=".branding">Fundiária</a>
+        <a href="#design" class="filter" data-filter=".design">Ambiental</a>
+        <a href="#photography" class="filter" data-filter=".photography">Humanitária</a>
+      </div>
+      <!-- End Works Filter -->
+      <!-- Works Grid -->
+      <ul class="works-grid work-grid-2 work-grid-gut clearfix font-alt hover-white" id="work-grid">
+        <!-- Work Item (Lightbox) -->
+        {% for case in cases %}
+        <li class="work-item mix photography">
+          <a href="{% url 'core:detail' case.id %}" class="work-ext-link">
+            <div class="work-img">
+              <img src="{{case.miniature.url}}" alt="Work" />
+            </div>
+            <div class="work-intro">
+              <h3 class="work-title">{{case.title}}</h3>
+              <div class="work-descr">
+                {{case.sub_title}}
               </div>
-          </div>
-
+            </div>
+          </a>
+        </li>
+        {% endfor %}
+        <!-- End Work Item -->
+        <!-- End Works Grid -->
       </div>
-  </section>
-  <!-- End Call Action Section -->
+    </section>
+    <!-- End Portfolio Section -->
+    <!-- Call Action Section -->
+    <section class="small-section bg-yellow-dg">
+      <div class="container relative">
+        <div class="align-center">
+          <h3 class="banner-heading font-alt">Gostou do nosso trabalho?</h3>
+          <div>
+            <a href="contact.html" class="btn btn-mod btn-w btn-medium btn-round">Converse conosco!</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Call Action Section -->
 
 {% endblock content %}
 
