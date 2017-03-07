@@ -91,12 +91,16 @@
         <div class="align-center">
           <h3 class="banner-heading font-alt">Gostou do nosso trabalho?</h3>
           <div>
-            <a href="contact.html" class="btn btn-mod btn-w btn-medium btn-round">Converse conosco!</a>
+            <a href="{% url 'core:index' %}#contact" class="btn btn-mod btn-w btn-medium btn-round">Converse conosco!</a>
           </div>
         </div>
       </div>
     </section>
     <!-- End Call Action Section -->
+
+    {% block footer %}
+      {{block.super}}
+    {% endblock footer %}
 
 {% endblock content %}
 

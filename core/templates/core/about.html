@@ -1,634 +1,395 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Instituto Beraca</title>
-        <meta name="description" content="">
-        <meta name="keywords" content="">
-        <meta charset="utf-8">
-        <meta name="author" content="3Ecologias.net">
-        <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+{% extends 'core/base.html' %}
+{% load staticfiles %}
 
-        <!-- Favicons -->
-        <link rel="shortcut icon" href="images/favicon.png">
+{% block content %}
 
-        <!-- CSS -->
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="stylesheet" href="css/style-responsive.css">
-        <link rel="stylesheet" href="css/animate.min.css">
-        <link rel="stylesheet" href="css/vertical-rhythm.min.css">
-        <link rel="stylesheet" href="css/owl.carousel.css">
-        <link rel="stylesheet" href="css/magnific-popup.css">
-
-    </head>
-    <body class="appear-animate">
-
-        <!-- Page Loader -->
-        <div class="page-loader">
-            <div class="loader">Carregando...</div>
+{% include 'core/partials/navpanel_with_links.html' %}
+<!-- Head Section -->
+<section class="page-section bg-dark-alfa-30 parallax-2" data-background="{% static 'images/texturas-18.jpg' %}">
+    <div class="relative container align-left">
+        <div class="row">
+            <div class="col-md-8">
+                <h1 class="hs-line-11 font-alt mb-20 mb-xs-0">Quem Somos</h1>
+                <div class="hs-line-4 font-alt">
+                    O que nos compõe é a nossa história
+                </div>
+            </div>
         </div>
-        <!-- End Page Loader -->
-
-        <!-- Page Wrap -->
-        <div class="page" id="top">
-
-        <!-- Navigation panel -->
-        <nav class="main-nav white transparent stick-fixed">
-              <div class="full-wrapper relative clearfix">
-                  <!-- Logo ( * your text or image into link tag *) -->
-                  <div class="nav-logo-wrap local-scroll">
-                      <a href="#top" class="logo">
-                          <img src="images/logo-white.png" alt="" />
-                      </a>
-                  </div>
-                  <div class="mobile-nav">
-                      <i class="fa fa-bars"></i>
-                  </div>
-                  <!-- Main Menu -->
-                  <div class="inner-nav desktop-nav">
-                      <ul class="clearlist scroll-nav local-scroll">
-                          <li class="active"><a href="index.html">Home</a></li>
-                          <li><a href="about.html">Quem somos</a></li>
-                          <li><a href="services.html">O que fazemos</a></li>
-                          <li><a href="cases.html">Onde atuamos</a></li>
-                          <li><a href="news.html">Notícias</a></li>
-                          <li><a href="contact.html">Contatos</a></li>
-
-                      </ul>
-                  </div>
-              </div>
-          </nav>
-          <!-- End Navigation panel -->
-
-
-            <!-- Head Section -->
-            <section class="page-section bg-dark-alfa-30 parallax-2" data-background="images/texturas-18.jpg">
-                <div class="relative container align-left">
-
-                    <div class="row">
-
-                        <div class="col-md-8">
-                            <h1 class="hs-line-11 font-alt mb-20 mb-xs-0">Quem Somos</h1>
-                            <div class="hs-line-4 font-alt">
-                                O que nos compõe é a nossa história
-                            </div>
-                        </div>
-                    </div>
-
+    </div>
+</section>
+<!-- End Head Section -->
+<!-- About Section -->
+<section class="page-section" id="about">
+    <div class="container relative">
+        <div class="section-text mb-60 mb-sm-40">
+            <div class="row">
+                <div class="col-sm-6 mb-sm-50 mb-xs-30">
+                    <h4 class="mt-0 font-alt">O orgulho do nosso passado</h4>
+                    <p>
+                      O Instituto Beraca surge dentro da operação da Beraca, empresa de líder em fornecimento de ingredientes naturais e orgânicos compostos de ativos extraídos da Amazônia de outros biomas brasileiro.
+                    </p>
+                    <p>
+                      A partir de 2000, a Beraca estruturou o Programa Beraca de Valorização da Biodiversidade, com o objetivo de assegurar a sustentabilidade no fornecimento de matérias primas da biodiversidade brasileira para o mercado global. Buscando maximizar o impacto social positivo nas comunidades fornecedoras, a Beraca passou a auxiliar comunidades locais nos processos de organização, aumentando a consciência sobre responsabilidade socioambiental, promovendo a transferência de conhecimento e a co-criação de tecnologia.
+                    </p>
+                    <p>
+                      O êxito desse programa vem sendo reconhecido em nível nacional a internacional. (incluir dados sobre prêmios e reconhecimentos)
+                    </p>
+                    <p>
+                      Em anos recentes, a Beraca passou a ser procurada por parceiros e clientes para atuar em territórios que tem sua biodiversidade ameaçada ou em que há oportunidades para fornecimento de matérias primas em ações integradas de sustentabilidade. Apesar desse não ser o core business da Beraca, seus dirigentes entenderam que a expertise que nasceu dentro do negócio tinha o potencial de impactar mais amplamente a sociedade. Passaram a estudar a possibilidade de criar um Instituto que pudesse realizar o sonho mais amplo de deixar uma contribuição para as gerações futuras.
+                    </p>
                 </div>
-            </section>
-            <!-- End Head Section -->
-
-
-            <!-- About Section -->
-            <section class="page-section" id="about">
-                <div class="container relative">
-
-                    <div class="section-text mb-60 mb-sm-40">
-                        <div class="row">
-
-                            <div class="col-sm-6 mb-sm-50 mb-xs-30">
-
-                                <h4 class="mt-0 font-alt">O orgulho do nosso passado</h4>
-
-                                <p>
-                                  O Instituto Beraca surge dentro da operação da Beraca, empresa de líder em fornecimento de ingredientes naturais e orgânicos compostos de ativos extraídos da Amazônia de outros biomas brasileiro.
-                                </p>
-                                <p>
-                                  A partir de 2000, a Beraca estruturou o Programa Beraca de Valorização da Biodiversidade, com o objetivo de assegurar a sustentabilidade no fornecimento de matérias primas da biodiversidade brasileira para o mercado global. Buscando maximizar o impacto social positivo nas comunidades fornecedoras, a Beraca passou a auxiliar comunidades locais nos processos de organização, aumentando a consciência sobre responsabilidade socioambiental, promovendo a transferência de conhecimento e a co-criação de tecnologia.
-                                </p>
-                                <p>
-                                  O êxito desse programa vem sendo reconhecido em nível nacional a internacional. (incluir dados sobre prêmios e reconhecimentos)
-                                </p>
-                                <p>
-                                  Em anos recentes, a Beraca passou a ser procurada por parceiros e clientes para atuar em territórios que tem sua biodiversidade ameaçada ou em que há oportunidades para fornecimento de matérias primas em ações integradas de sustentabilidade. Apesar desse não ser o core business da Beraca, seus dirigentes entenderam que a expertise que nasceu dentro do negócio tinha o potencial de impactar mais amplamente a sociedade. Passaram a estudar a possibilidade de criar um Instituto que pudesse realizar o sonho mais amplo de deixar uma contribuição para as gerações futuras.
-                                </p>
-                            </div>
-
-                            <div class="col-sm-6 mb-sm-50 mb-xs-30">
-
-                                <!-- Bar Item -->
-                                <div class="progress tpl-progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
-                                        Desenvolvimento sustentável <span><icon class="fa fa-arrow-circle-right"></i></span>
-                                    </div>
-                                </div>
-                                <!-- End Bar Item -->
-
-                                <!-- Bar Item -->
-                                <div class="progress tpl-progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
-                                        Capacitação e monitoramento <span><icon class="fa fa-arrow-circle-right"></i></span>
-                                    </div>
-                                </div>
-                                <!-- End Bar Item -->
-
-                                <!-- Bar Item -->
-                                <div class="progress tpl-progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
-                                        Transformação social <span><icon class="fa fa-arrow-circle-right"></i></span>
-                                    </div>
-                                </div>
-                                <!-- End Bar Item -->
-
-                                <!-- Bar Item -->
-                                <div class="progress tpl-progress">
-                                    <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-                                        GAP Analysis <span><icon class="fa fa-arrow-circle-right"></i></span>
-                                    </div>
-                                </div>
-                                <!-- End Bar Item -->
-
-                            </div>
-
+                <div class="col-sm-6 mb-sm-50 mb-xs-30">
+                    <!-- Bar Item -->
+                    <div class="progress tpl-progress">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">
+                            Desenvolvimento sustentável <span><icon class="fa fa-arrow-circle-right"></i></span>
                         </div>
                     </div>
-
-
-                    <!-- Counters -->
-                    <div class="count-wrapper mb-80 mb-sm-60">
-                        <div class="row">
-
-                            <!-- Counter Item -->
-                            <div class="col-xs-6 col-sm-3">
-                                <div class="count-number">
-                                    3000
-                                </div>
-                                <div class="count-descr font-alt">
-                                    <i class="fa fa-user-circle"></i>
-                                    <span class="count-title">Pessoas atendidas</span>
-                                </div>
-                            </div>
-                            <!-- End Counter Item -->
-
-                            <!-- Counter Item -->
-                            <div class="col-xs-6 col-sm-3">
-                                <div class="count-number">
-                                    150
-                                </div>
-                                <div class="count-descr font-alt">
-                                    <i class="fa fa-group"></i>
-                                    <span class="count-title">Comunidades parceiras</span>
-                                </div>
-                            </div>
-                            <!-- End Counter Item -->
-
-                            <!-- Counter Item -->
-                            <div class="col-xs-6 col-sm-3">
-                                <div class="count-number">
-                                    26
-                                </div>
-                                <div class="count-descr font-alt">
-                                    <i class="fa fa-cogs"></i>
-                                    <span class="count-title">Ações realizadas</span>
-                                </div>
-                            </div>
-                            <!-- End Counter Item -->
-
-                            <!-- Counter Item -->
-                            <div class="col-xs-6 col-sm-3">
-                                <div class="count-number">
-                                    1000000
-                                </div>
-                                <div class="count-descr font-alt">
-                                    <i class="fa fa-lightbulb-o"></i>
-                                    <span class="count-title">Grandes ideias</span>
-                                </div>
-                            </div>
-                            <!-- End Counter Item -->
-
+                    <!-- End Bar Item -->
+                    <!-- Bar Item -->
+                    <div class="progress tpl-progress">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+                            Capacitação e monitoramento <span><icon class="fa fa-arrow-circle-right"></i></span>
                         </div>
                     </div>
-                    <!-- End Counters -->
-
-
-                    <!-- Team -->
-                    <div class="row multi-columns-row">
-
-                        <!-- Team Item -->
-                        <div class="col-sm-6 col-md-3 col-lg-3 mb-sm-30 wow fadeInUp">
-                            <div class="team-item">
-
-                                <div class="team-item-image">
-
-                                    <img src="images/team/team-1.jpg" alt="" />
-
-                                    <div class="team-item-detail">
-
-                                        <h4 class="font-alt normal">Hello & Welcome!</h4>
-
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit lacus, a&nbsp;iaculis diam.
-                                        </p>
-
-                                        <div class="team-social-links">
-                                            <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
-                                            <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
-                                            <a href="#" target="_blank"><i class="fa fa-pinterest"></i></a>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                                <div class="team-item-descr font-alt">
-
-                                    <div class="team-item-name">
-                                        Thomas Rhythm
-                                    </div>
-
-                                    <div class="team-item-role">
-                                        Art Director
-                                    </div>
-
-                                </div>
-
-                            </div>
+                    <!-- End Bar Item -->
+                    <!-- Bar Item -->
+                    <div class="progress tpl-progress">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">
+                            Transformação social <span><icon class="fa fa-arrow-circle-right"></i></span>
                         </div>
-                        <!-- End Team Item -->
-
-                        <!-- Team Item -->
-                        <div class="col-sm-6 col-md-3 col-lg-3 mb-md-30 wow fadeInUp" data-wow-delay="0.1s">
-                            <div class="team-item">
-
-                                <div class="team-item-image">
-
-                                    <img src="images/team/team-2.jpg" alt="" />
-
-                                    <div class="team-item-detail">
-
-                                        <h4 class="font-alt normal">Nice to meet!</h4>
-
-                                        <p>
-                                            Curabitur augue, nec finibus mauris pretium eu. Duis placerat ex gravida nibh tristique porta.
-                                        </p>
-
-                                        <div class="team-social-links">
-                                            <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
-                                            <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
-                                            <a href="#" target="_blank"><i class="fa fa-pinterest"></i></a>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                                <div class="team-item-descr font-alt">
-
-                                    <div class="team-item-name">
-                                        Marta Laning
-                                    </div>
-
-                                    <div class="team-item-role">
-                                        Web engineer
-                                    </div>
-
-                                </div>
-
-                            </div>
-                        </div>
-                        <!-- End Team Item -->
-
-                        <!-- Team Item -->
-                        <div class="col-sm-6 col-md-3 col-lg-3 mb-md-30 wow fadeInUp" data-wow-delay="0.2s">
-                            <div class="team-item">
-
-                                <div class="team-item-image">
-
-                                    <img src="images/team/team-3.jpg" alt="" />
-
-                                    <div class="team-item-detail">
-
-                                        <h4 class="font-alt normal">Whats Up!</h4>
-
-                                        <p>
-                                            Adipiscing elit curabitur eu&nbsp;adipiscing lacus eu&nbsp;adipiscing lacus, a&nbsp;iaculis diam.
-                                        </p>
-
-                                        <div class="team-social-links">
-                                            <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
-                                            <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
-                                            <a href="#" target="_blank"><i class="fa fa-pinterest"></i></a>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                                <div class="team-item-descr font-alt">
-
-                                    <div class="team-item-name">
-                                        Steve ANDERS
-                                    </div>
-
-                                    <div class="team-item-role">
-                                        Developer
-                                    </div>
-
-                                </div>
-
-                            </div>
-                        </div>
-                        <!-- End Team Item -->
-
-                        <!-- Team Item -->
-                        <div class="col-sm-6 col-md-3 col-lg-3 mb-md-30 wow fadeInUp" data-wow-delay="0.3s">
-                            <div class="team-item">
-
-                                <div class="team-item-image">
-
-                                    <img src="images/team/team-4.jpg" alt="" />
-
-                                    <div class="team-item-detail">
-
-                                        <h4 class="font-alt normal">Hi to all!</h4>
-
-                                        <p>
-                                            Adipiscing elit curabitur eu&nbsp;adipiscing lacus eu&nbsp;adipiscing lacus, a&nbsp;iaculis diam.
-                                        </p>
-
-                                        <div class="team-social-links">
-                                            <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
-                                            <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
-                                            <a href="#" target="_blank"><i class="fa fa-pinterest"></i></a>
-                                        </div>
-
-                                    </div>
-                                </div>
-
-                                <div class="team-item-descr font-alt">
-
-                                    <div class="team-item-name">
-                                        Emma Connor
-                                    </div>
-
-                                    <div class="team-item-role">
-                                        Creative Director
-                                    </div>
-
-                                </div>
-
-                            </div>
-                        </div>
-                        <!-- End Team Item -->
-
                     </div>
-                    <!-- End Team -->
-
-
+                    <!-- End Bar Item -->
+                    <!-- Bar Item -->
+                    <div class="progress tpl-progress">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+                            GAP Analysis <span><icon class="fa fa-arrow-circle-right"></i></span>
+                        </div>
+                    </div>
+                    <!-- End Bar Item -->
                 </div>
-            </section>
-            <!-- End About Section -->
-
-
-            <!-- Testimonials Section -->
-            <section class="page-section bg-dark bg-color-alfa-30 fullwidth-slider" data-background="images/beraca_testimonial1.jpg">
-
-                <!-- Slide Item -->
-                <div>
-                    <div class="container relative">
-                        <div class="row">
-                            <div class="col-md-8 col-md-offset-2 align-center">
-                                <!-- Section Icon -->
-                                <div class="section-icon">
-                                    <span class="icon-quote"></span>
-                                </div>
-                                <!-- Section Title --><h3 class="small-title font-alt">O que dizem</h3>
-                                <blockquote class="testimonial white">
-                                    <p>
-                                        A atuação do Instituto Beraca em nossa comunidade facilitou o processo de relação com o mercado e distribuição de nossos produtos. Obrigado!
-                                    </p>
-                                    <footer class="testimonial-author">
-                                        Maria do Vale, associção de mulheres.
-                                    </footer>
-                                </blockquote>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Slide Item -->
-
-                <!-- Slide Item -->
-                <div>
-                    <div class="container relative">
-                        <div class="row">
-                            <div class="col-md-8 col-md-offset-2 align-center">
-                                <!-- Section Icon -->
-                                <div class="section-icon">
-                                    <span class="icon-quote"></span>
-                                </div>
-                                <!-- Section Title --><h3 class="small-title font-alt">What people say?</h3>
-                                <blockquote class="testimonial white">
-                                    <p>
-                                        Phasellus luctus commodo ullamcorper a posuere rhoncus commodo elit. Aenean congue,
-                                        risus utaliquam dapibus. Thanks!
-                                    </p>
-                                    <footer class="testimonial-author">
-                                        John Doe, doodle inc.
-                                    </footer>
-                                </blockquote>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Slide Item -->
-
-                <!-- Slide Item -->
-                <div>
-                    <div class="container relative">
-                        <div class="row">
-                            <div class="col-md-8 col-md-offset-2 align-center">
-                                <!-- Section Icon -->
-                                <div class="section-icon">
-                                    <span class="icon-quote"></span>
-                                </div>
-                                <!-- Section Title --><h3 class="small-title font-alt">What people say?</h3>
-                                <blockquote class="testimonial white">
-                                    <p>
-                                        Phasellus luctus commodo ullamcorper a posuere rhoncus commodo elit. Aenean congue,
-                                        risus utaliquam dapibus. Thanks!
-                                    </p>
-                                    <footer class="testimonial-author">
-                                        John Doe, doodle inc.
-                                    </footer>
-                                </blockquote>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- End Slide Item -->
-
-            </section>
-            <!-- End Testimonials Section -->
-
-
-            <!-- Divider -->
-            <hr class="mt-0 mb-0 "/>
-            <!-- End Divider -->
-
-
-            <!-- Story Section -->
-            <section class="page-section">
-                <div class="container relative">
-
-                    <h2 class="section-title font-alt mb-70 mb-sm-40">
-                        Conheça nosso ponto de vista
-                    </h2>
-
-                    <!-- Our Story -->
-                    <div class="row">
-
-                        <!-- Col -->
-
-                        <div class="col-sm-8 col-sm-offset-2">
-
-                            <!-- Nav Tabs -->
-                            <div class="align-center mb-40 mb-xxs-30">
-                                <ul class="nav nav-tabs tpl-minimal-tabs animate">
-
-                                    <li class="active">
-                                        <a href="#mini-one" data-toggle="tab">Missão</a>
-                                    </li>
-
-                                    <li>
-                                        <a href="#mini-two" data-toggle="tab">Visão</a>
-                                    </li>
-
-                                    <li>
-                                        <a href="#mini-three" data-toggle="tab">Valores</a>
-                                    </li>
-
-                                </ul>
-                            </div>
-                            <!-- End Nav Tabs -->
-
-                            <!-- Tab panes -->
-                            <div class="tab-content tpl-minimal-tabs-cont section-text align-center">
-
-                                <div class="tab-pane fade in active" id="mini-one">
-                                    A missão do Instituto Beraca é sonhar transformação social conjuntamente com comunidades vulneráveis e, através do acesso a mercados diferenciados, ativar economias locais sustentáveis que garantam a preservação e restauração do meio ambiente, a continuidade da diversidade cultural e a o resgate da dignidade humana impactada pela pobreza.
-                                </div>
-
-                                <div class="tab-pane fade" id="mini-two">
-                                  “A melhor coisa que se pode fazer pelo próximo não é apenas dividir com ele suas riquezas, <br>mas revelar-lhe as dele mesmo.”
-                                  <br>Benjamin Disraeli (escritor e primeiro-ministro do Reino Unido em 1868 e entre 1874 e 1880)
-								</div>
-
-                                <div class="tab-pane fade" id="mini-three">
-                                  - Empatia e respeito ao outro
-                                  <br>- Empreendedorismo e resiliência
-                                  <br>- Respeito à diversidade humana e cultural
-                                  <br>- Ética e transparência
-								</div>
-
-                            </div>
-
-                        </div>
-
-                        <!-- End Col -->
-
-                    </div>
-                    <!-- End Story -->
-
-                </div>
-            </section>
-            <!-- End Story Section -->
-
-
-            <!-- Call Action Section -->
-            <section class="small-section bg-yellow-dg">
-                <div class="container relative">
-
-                    <div class="align-center">
-                        <h3 class="banner-heading font-alt">Quer conversar com a gente?</h3>
-                        <div>
-                            <a href="contact.html" class="btn btn-mod btn-w btn-medium btn-round">É rápido</a>
-                        </div>
-                    </div>
-
-                </div>
-            </section>
-            <!-- End Call Action Section -->
-
-
-            <!-- Foter -->
-            <footer class="page-section bg-gray-lighter footer pb-60">
-                <div class="container">
-
-                    <!-- Footer Logo -->
-                    <div class="local-scroll mb-30 wow fadeInUp" data-wow-duration="1.5s">
-                        <a href="#top"><img src="images/logo-footer.png" width="78" height="36" alt="" /></a>
-                    </div>
-                    <!-- End Footer Logo -->
-
-                    <!-- Social Links -->
-                    <div class="footer-social-links mb-110 mb-xs-60">
-                        <a href="#" title="Facebook" target="_blank"><i class="fa fa-facebook"></i></a>
-                        <a href="#" title="Twitter" target="_blank"><i class="fa fa-twitter"></i></a>
-                        <a href="#" title="Instagram" target="_blank"><i class="fa fa-instagram"></i></a>
-                        <a href="#" title="LinkedIn+" target="_blank"><i class="fa fa-linkedin"></i></a>
-                    </div>
-                    <!-- End Social Links -->
-
-                    <!-- Footer Text -->
-                    <div class="footer-text">
-
-                        <!-- Copyright -->
-                        <div class="footer-copy font-alt">
-                            <a href="http://themeforest.net/user/theme-guru/portfolio" target="_blank">&copy; Rhythm 2017</a>.
-                        </div>
-                        <!-- End Copyright -->
-
-                        <div class="footer-made">
-                            Made with love for great people.
-                        </div>
-
-                    </div>
-                    <!-- End Footer Text -->
-
-                 </div>
-
-
-                 <!-- Top Link -->
-                 <div class="local-scroll">
-                     <a href="#top" class="link-to-top"><i class="fa fa-caret-up"></i></a>
-                 </div>
-                 <!-- End Top Link -->
-
-            </footer>
-            <!-- End Foter -->
-
-
+            </div>
         </div>
-        <!-- End Page Wrap -->
+        <!-- Counters -->
+        <div class="count-wrapper mb-80 mb-sm-60">
+            <div class="row">
+                <!-- Counter Item -->
+                <div class="col-xs-6 col-sm-3">
+                    <div class="count-number">
+                        3000
+                    </div>
+                    <div class="count-descr font-alt">
+                        <i class="fa fa-user-circle"></i>
+                        <span class="count-title">Pessoas atendidas</span>
+                    </div>
+                </div>
+                <!-- End Counter Item -->
+                <!-- Counter Item -->
+                <div class="col-xs-6 col-sm-3">
+                    <div class="count-number">
+                        150
+                    </div>
+                    <div class="count-descr font-alt">
+                        <i class="fa fa-group"></i>
+                        <span class="count-title">Comunidades parceiras</span>
+                    </div>
+                </div>
+                <!-- End Counter Item -->
+                <!-- Counter Item -->
+                <div class="col-xs-6 col-sm-3">
+                    <div class="count-number">
+                        26
+                    </div>
+                    <div class="count-descr font-alt">
+                        <i class="fa fa-cogs"></i>
+                        <span class="count-title">Ações realizadas</span>
+                    </div>
+                </div>
+                <!-- End Counter Item -->
+                <!-- Counter Item -->
+                <div class="col-xs-6 col-sm-3">
+                    <div class="count-number">
+                        1000000
+                    </div>
+                    <div class="count-descr font-alt">
+                        <i class="fa fa-lightbulb-o"></i>
+                        <span class="count-title">Grandes ideias</span>
+                    </div>
+                </div>
+                <!-- End Counter Item -->
+            </div>
+        </div>
+        <!-- End Counters -->
 
+        <!-- Team -->
+        <div class="row multi-columns-row">
+            <!-- Team Item -->
+            <div class="col-sm-6 col-md-3 col-lg-3 mb-sm-30 wow fadeInUp">
+                <div class="team-item">
+                    <div class="team-item-image">
+                        <img src="{% static 'images/team/team-1.jpg' %}" alt="" />
+                        <div class="team-item-detail">
+                            <h4 class="font-alt normal">Hello & Welcome!</h4>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit lacus, a&nbsp;iaculis diam.
+                            </p>
+                            <div class="team-social-links">
+                                <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
+                                <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+                                <a href="#" target="_blank"><i class="fa fa-pinterest"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-item-descr font-alt">
+                        <div class="team-item-name">
+                            Thomas Rhythm
+                        </div>
+                        <div class="team-item-role">
+                            Art Director
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Team Item -->
 
-        <!-- JS -->
-        <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
-        <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
-        <script type="text/javascript" src="js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="js/SmoothScroll.js"></script>
-        <script type="text/javascript" src="js/jquery.scrollTo.min.js"></script>
-        <script type="text/javascript" src="js/jquery.localScroll.min.js"></script>
-        <script type="text/javascript" src="js/jquery.viewport.mini.js"></script>
-        <script type="text/javascript" src="js/jquery.countTo.js"></script>
-        <script type="text/javascript" src="js/jquery.appear.js"></script>
-        <script type="text/javascript" src="js/jquery.sticky.js"></script>
-        <script type="text/javascript" src="js/jquery.parallax-1.1.3.js"></script>
-        <script type="text/javascript" src="js/jquery.fitvids.js"></script>
-        <script type="text/javascript" src="js/owl.carousel.min.js"></script>
-        <script type="text/javascript" src="js/isotope.pkgd.min.js"></script>
-        <script type="text/javascript" src="js/imagesloaded.pkgd.min.js"></script>
-        <script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script>
-        <!-- Replace test API Key "AIzaSyAZsDkJFLS0b59q7cmW0EprwfcfUA8d9dg" with your own one below
-        **** You can get API Key here - https://developers.google.com/maps/documentation/javascript/get-api-key -->
-        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAZsDkJFLS0b59q7cmW0EprwfcfUA8d9dg"></script>
-        <script type="text/javascript" src="js/gmap3.min.js"></script>
-        <script type="text/javascript" src="js/wow.min.js"></script>
-        <script type="text/javascript" src="js/masonry.pkgd.min.js"></script>
-        <script type="text/javascript" src="js/jquery.simple-text-rotator.min.js"></script>
-        <script type="text/javascript" src="js/all.js"></script>
-        <script type="text/javascript" src="js/contact-form.js"></script>
-        <script type="text/javascript" src="js/jquery.ajaxchimp.min.js"></script>
-        <!--[if lt IE 10]><script type="text/javascript" src="js/placeholder.js"></script><![endif]-->
+            <!-- Team Item -->
+            <div class="col-sm-6 col-md-3 col-lg-3 mb-md-30 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="team-item">
+                    <div class="team-item-image">
+                        <img src="{% static 'images/team/team-2.jpg' %}" alt="" />
+                        <div class="team-item-detail">
+                            <h4 class="font-alt normal">Nice to meet!</h4>
+                            <p>
+                                Curabitur augue, nec finibus mauris pretium eu. Duis placerat ex gravida nibh tristique porta.
+                            </p>
+                            <div class="team-social-links">
+                                <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
+                                <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+                                <a href="#" target="_blank"><i class="fa fa-pinterest"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-item-descr font-alt">
+                        <div class="team-item-name">
+                            Marta Laning
+                        </div>
+                        <div class="team-item-role">
+                            Web engineer
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Team Item -->
+            <!-- Team Item -->
+            <div class="col-sm-6 col-md-3 col-lg-3 mb-md-30 wow fadeInUp" data-wow-delay="0.2s">
+                <div class="team-item">
+                    <div class="team-item-image">
+                        <img src="{% static 'images/team/team-3.jpg' %}" alt="" />
+                        <div class="team-item-detail">
+                            <h4 class="font-alt normal">Whats Up!</h4>
+                            <p>
+                                Adipiscing elit curabitur eu&nbsp;adipiscing lacus eu&nbsp;adipiscing lacus, a&nbsp;iaculis diam.
+                            </p>
+                            <div class="team-social-links">
+                                <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
+                                <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+                                <a href="#" target="_blank"><i class="fa fa-pinterest"></i></a>
+                            </div/>
+                        </div>
+                    </div>
+                    <div class="team-item-descr font-alt">
+                        <div class="team-item-name">
+                            Steve ANDERS
+                        </div>
+                        <div class="team-item-role">
+                            Developer
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Team Item -->
 
-    </body>
-</html>
+            <!-- Team Item -->
+            <div class="col-sm-6 col-md-3 col-lg-3 mb-md-30 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="team-item">
+                    <div class="team-item-image">
+                        <img src="{% static 'images/team/team-4.jpg' %}" alt="" />
+                        <div class="team-item-detail">
+                            <h4 class="font-alt normal">Hi to all!</h4>
+                            <p>
+                                Adipiscing elit curabitur eu&nbsp;adipiscing lacus eu&nbsp;adipiscing lacus, a&nbsp;iaculis diam.
+                            </p>
+                            <div class="team-social-links">
+                                <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
+                                <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
+                                <a href="#" target="_blank"><i class="fa fa-pinterest"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-item-descr font-alt">
+                        <div class="team-item-name">
+                            Emma Connor
+                        </div>
+                        <div class="team-item-role">
+                            Creative Director
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Team Item -->
+        </div>
+        <!-- End Team -->
+    </div>
+</section>
+<!-- End About Section -->
+
+<!-- Testimonials Section -->
+<section class="page-section bg-dark bg-color-alfa-30 fullwidth-slider" data-background="{% static 'images/beraca_testimonial1.jpg' %}">
+
+    <!-- Slide Item -->
+    <div>
+        <div class="container relative">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 align-center">
+                    <!-- Section Icon -->
+                    <div class="section-icon">
+                        <span class="icon-quote"></span>
+                    </div>
+                    <!-- Section Title --><h3 class="small-title font-alt">O que dizem</h3>
+                    <blockquote class="testimonial white">
+                        <p>
+                            A atuação do Instituto Beraca em nossa comunidade facilitou o processo de relação com o mercado e distribuição de nossos produtos. Obrigado!
+                        </p>
+                        <footer class="testimonial-author">
+                            Maria do Vale, associção de mulheres.
+                        </footer>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Slide Item -->
+
+    <!-- Slide Item -->
+    <div>
+        <div class="container relative">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 align-center">
+                    <!-- Section Icon -->
+                    <div class="section-icon">
+                        <span class="icon-quote"></span>
+                    </div>
+                    <!-- Section Title --><h3 class="small-title font-alt">What people say?</h3>
+                    <blockquote class="testimonial white">
+                        <p>
+                            Phasellus luctus commodo ullamcorper a posuere rhoncus commodo elit. Aenean congue,
+                            risus utaliquam dapibus. Thanks!
+                        </p>
+                        <footer class="testimonial-author">
+                            John Doe, doodle inc.
+                        </footer>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Slide Item -->
+
+    <!-- Slide Item -->
+    <div>
+        <div class="container relative">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 align-center">
+                    <!-- Section Icon -->
+                    <div class="section-icon">
+                        <span class="icon-quote"></span>
+                    </div>
+                    <!-- Section Title --><h3 class="small-title font-alt">What people say?</h3>
+                    <blockquote class="testimonial white">
+                        <p>
+                            Phasellus luctus commodo ullamcorper a posuere rhoncus commodo elit. Aenean congue,
+                            risus utaliquam dapibus. Thanks!
+                        </p>
+                        <footer class="testimonial-author">
+                            John Doe, doodle inc.
+                        </footer>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Slide Item -->
+</section>
+<!-- End Testimonials Section -->
+
+<!-- Divider -->
+<hr class="mt-0 mb-0 "/>
+<!-- End Divider -->
+<!-- Story Section -->
+<section class="page-section">
+    <div class="container relative">
+        <h2 class="section-title font-alt mb-70 mb-sm-40">
+            Conheça nosso ponto de vista
+        </h2>
+        <!-- Our Story -->
+        <div class="row">
+            <!-- Col -->
+            <div class="col-sm-8 col-sm-offset-2">
+                <!-- Nav Tabs -->
+                <div class="align-center mb-40 mb-xxs-30">
+                    <ul class="nav nav-tabs tpl-minimal-tabs animate">
+                        <li class="active">
+                            <a href="#mini-one" data-toggle="tab">Missão</a>
+                        </li>
+                        <li>
+                            <a href="#mini-two" data-toggle="tab">Visão</a>
+                        </li>
+                        <li>
+                            <a href="#mini-three" data-toggle="tab">Valores</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- End Nav Tabs -->
+                <!-- Tab panes -->
+                <div class="tab-content tpl-minimal-tabs-cont section-text align-center">
+                    <div class="tab-pane fade in active" id="mini-one">
+                        A missão do Instituto Beraca é sonhar transformação social conjuntamente com comunidades vulneráveis e, através do acesso a mercados diferenciados, ativar economias locais sustentáveis que garantam a preservação e restauração do meio ambiente, a continuidade da diversidade cultural e a o resgate da dignidade humana impactada pela pobreza.
+                    </div>
+                    <div class="tab-pane fade" id="mini-two">
+                      “A melhor coisa que se pode fazer pelo próximo não é apenas dividir com ele suas riquezas, <br>mas revelar-lhe as dele mesmo.”
+                      <br>Benjamin Disraeli (escritor e primeiro-ministro do Reino Unido em 1868 e entre 1874 e 1880)
+		</div>
+                    <div class="tab-pane fade" id="mini-three">
+                      - Empatia e respeito ao outro
+                      <br>- Empreendedorismo e resiliência
+                      <br>- Respeito à diversidade humana e cultural
+                      <br>- Ética e transparência
+		</div>
+                </div>
+            </div>
+            <!-- End Col -->
+        </div>
+        <!-- End Story -->
+    </div>
+</section>
+<!-- End Story Section -->
+
+<!-- Call Action Section -->
+<section class="small-section bg-yellow-dg">
+    <div class="container relative">
+
+        <div class="align-center">
+            <h3 class="banner-heading font-alt">Quer conversar com a gente?</h3>
+            <div>
+                <a href="{% url 'core:index' %}#contact" class="btn btn-mod btn-w btn-medium btn-round">É rápido</a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Call Action Section -->
+
+{% block footer %}
+  {{block.super}}
+{% endblock footer %}
+
+{% endblock content %}

@@ -120,3 +120,61 @@ class BlogImages(models.Model):
 
     def __unicode__(self):
         return self.post.title
+
+class ServiceItem(models.Model):
+    #common
+    icon = models.ImageField("Ícone", upload_to=generate_filename)
+    title = models.CharField("Título", max_length=200, blank=False)
+    mention = models.TextField('Citação', blank=True)
+    author = models.CharField("Autor", max_length=200, blank=False)
+    abstract = models.TextField("Conceito", blank=True)
+    conclusion = models.TextField("Conclusão", blank=True)
+
+    description = models.TextField("Descrição", blank=True)
+    disc_icon = models.ImageField("Ícone Discussão", upload_to=generate_filename)
+    disc_title = models.CharField("Título da Discussão", max_length=200, blank=False)
+    plan_icon = models.ImageField("Ícone Planejamento", upload_to=generate_filename)
+    plan_title = models.CharField("Título do Planejamento", max_length=200, blank=False)
+    action_icon = models.ImageField("Ícone Ação", upload_to=generate_filename)
+    action_title = models.CharField("Título da Ação", max_length=200, blank=False)
+
+    method_img = models.ImageField("Imagem da Metodologia", upload_to=generate_filename)
+    method_title = models.CharField("Título da Metodologia", max_length=200, blank=False)
+    method_desc = models.CharField("Descrição da Metdologia", max_length=200, blank=False)
+    sustainable_img = models.ImageField("Imagem de Sustentabilidade", upload_to=generate_filename)
+    sustainable_method_title = models.CharField("Título da Sustentabilidade", max_length=20, blank=False)
+    sustainable_method_desc = models.CharField("Descrição da Sustentabilidade", max_length=200, blank=False)
+    dev_img = models.ImageField("Imagem de Desenvolvimento", upload_to=generate_filename)
+    dev_method_title = models.CharField("Título da Desenvolvimento", max_length=200, blank=False)
+    dev_method_desc = models.CharField("Descrição da Desenvolvimento", max_length=200, blank=False)
+    date = models.DateField(auto_now=True)
+
+    def __unicode__(self):
+        return self.title
+
+    def get_next(self):
+        next = ServiceItem.objects.filter(id__gt=self.id)
+        if next:
+          return next.first()
+        return False
+
+    def get_prev(self):
+        prev = ServiceItem.objects.filter(id__lt=self.id).order_by('-id')
+        if prev:
+          return prev.first()
+        return False
+
+    class Meta:
+        verbose_name="Service/case"
+        verbose_name_plural="Services"
+        ordering = ['-date']
+def generate_filename(self, filename):
+    url = "Service/%s/%s" % (self.service.title, filename)
+    return url
+
+class ServiceImages(models.Model):
+    service = models.ForeignKey(ServiceItem, related_name='images')
+    image = models.ImageField("Primeira imagem(slide)", upload_to=generate_filename)
+
+    def __unicode__(self):
+        return self.service.title

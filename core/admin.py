@@ -21,3 +21,4 @@ class BlogAdmin(admin.ModelAdmin):
 
 admin.site.register(PortfolioItem, PortfolioAdmin)
 admin.site.register(BlogPost, BlogAdmin)
+admin.site.register(ServiceItem)
