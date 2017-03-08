@@ -76,16 +76,16 @@ class BlogDetailView(DetailView):
 	template_name = "core/detail_templates/blog_detail.html"
 	model = BlogPost
 
-class ServicesView(TemplateView):
-	template_name = "core/sections/services_section.html"
-	model = ServiceItem
-
-	def get_context_data(self, **kwargs):
-		context = super(ServicesView, self).get_context_data(**kwargs)
-		context.update({
-			'services': ServiceItem.objects.all(),
-		})
-		return context
+# class ServicesView(TemplateView):
+# 	template_name = "core/sections/services_section.html"
+# 	model = ServiceItem
+#
+# 	def get_context_data(self, **kwargs):
+# 		context = super(ServicesView, self).get_context_data(**kwargs)
+# 		context.update({
+# 			'services': ServiceItem.objects.all(),
+# 		})
+# 		return context
 
 class ServiceDetailView(DetailView):
 	template_name = "core/detail_templates/service_detail.html"

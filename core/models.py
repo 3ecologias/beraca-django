@@ -121,8 +121,13 @@ class BlogImages(models.Model):
     def __unicode__(self):
         return self.post.title
 
+def generate_filename(self, filename):
+    url = "Service/%s/%s" % (self.title, filename)
+    return url
+
 class ServiceItem(models.Model):
     #common
+    anchor = models.CharField("Âncora/Tab", max_length=200, blank=False)
     icon = models.ImageField("Ícone", upload_to=generate_filename)
     title = models.CharField("Título", max_length=200, blank=False)
     mention = models.TextField('Citação', blank=True)
@@ -168,13 +173,3 @@ class ServiceItem(models.Model):
         verbose_name="Service/case"
         verbose_name_plural="Services"
         ordering = ['-date']
-def generate_filename(self, filename):
-    url = "Service/%s/%s" % (self.service.title, filename)
-    return url
-
-class ServiceImages(models.Model):
-    service = models.ForeignKey(ServiceItem, related_name='images')
-    image = models.ImageField("Primeira imagem(slide)", upload_to=generate_filename)
-
-    def __unicode__(self):
-        return self.service.title

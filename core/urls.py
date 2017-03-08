@@ -14,7 +14,6 @@ urlpatterns = [
     url(r'^cases/detail/(?P<pk>\d+)$', views.CaseDetailView.as_view(), name='detail'),
     url(r'^blog/$', views.BlogListView.as_view(), name='blog'),
     url(r'^blog/detail/(?P<pk>\d+)$', views.BlogDetailView.as_view(), name='post_detail'),
-    url(r'^services/$', views.ServicesView.as_view(), name='services'),
     url(r'^services/detail/(?P<pk>\d+)$', views.ServiceDetailView.as_view(), name='service_detail'),
 ]
 
