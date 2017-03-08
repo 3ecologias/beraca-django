@@ -76,6 +76,7 @@ class BlogDetailView(DetailView):
 	template_name = "core/detail_templates/blog_detail.html"
 	model = BlogPost
 
+<<<<<<< Updated upstream
 # class ServicesView(TemplateView):
 # 	template_name = "core/sections/services_section.html"
 # 	model = ServiceItem
@@ -87,6 +88,8 @@ class BlogDetailView(DetailView):
 # 		})
 # 		return context
 
+=======
+>>>>>>> Stashed changes
 class ServiceDetailView(DetailView):
 	template_name = "core/detail_templates/service_detail.html"
 	model = ServiceItem
