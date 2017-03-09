@@ -1,4 +1,5 @@
 {% extends 'core/base.html' %}
+{% load staticfiles %}
 
 {% block content %}
   {% block navigation %}
@@ -36,9 +37,7 @@
                   <div class="alt-features-item align-center">
                       <div class="alt-features-descr align-left">
                           <h4 class="mt-0 font-alt">Nosso processo de trabalho</h4>
-                          Identificamos oportunidades para empresas e comunidades locais
-                           e realizamos a
-                          Maecenas  volutpat, diam enim.
+                          {{ object.description}}
                       </div>
                   </div>
               </div>
@@ -48,7 +47,8 @@
               <div class="col-sm-3">
                   <div class="alt-features-item align-center">
                       <div class="alt-features-icon">
-                          <span class="icon-chat"></span>
+                          <!-- <span class="icon-chat"></span> -->
+                          <img class="img-responsive" src="{{ object.disc_icon.url }}">
                       </div>
                       <h3 class="alt-features-title font-alt">1. Discussões</h3>
                   </div>
@@ -59,7 +59,7 @@
               <div class="col-sm-3">
                   <div class="alt-features-item align-center">
                       <div class="alt-features-icon">
-                          <span class="icon-calendar"></span>
+                          <img class="img-responsive" src="{{ object.plan_icon.url }}">
                       </div>
                       <h3 class="alt-features-title font-alt">2. Planejamento</h3>
                   </div>
@@ -70,7 +70,7 @@
               <div class="col-sm-3">
                   <div class="alt-features-item align-center">
                       <div class="alt-features-icon">
-                          <span class="icon-target"></span>
+                          <img class="img-responsive" src="{{ object.action_icon.url }}">
                       </div>
                       <h3 class="alt-features-title font-alt">3. Ação</h3>
                   </div>
@@ -91,16 +91,15 @@
               <div class="col-sm-6 col-md-4 col-lg-4 mb-md-50 wow fadeIn" data-wow-delay="0.1s" data-wow-duration="2s">
 
                   <div class="post-prev-img">
-                      <img src="images/blog/post-prev-1.jpg" alt="" />
+                      <img src="{{ object.method_img.url }}" alt="" />
                   </div>
 
                   <div class="post-prev-title font-alt">
-                      Metodologias de um serviço breve
+                      {{ object.method_title }}
                   </div>
 
                   <div class="post-prev-text">
-                      Maecenas  volutpat, diam enim sagittis quam, id porta quam. Sed id dolor
-                      consectetur fermentum nibh volutpat, accumsan purus.
+                      {{ object.method_desc }}
                   </div>
 
               </div>
@@ -110,16 +109,15 @@
               <div class="col-sm-6 col-md-4 col-lg-4 mb-md-50 wow fadeIn" data-wow-delay="0.2s" data-wow-duration="2s">
 
                   <div class="post-prev-img">
-                      <img src="images/blog/post-prev-2.jpg" alt="" />
+                      <img src="{{ object.sustainable_img.url }}" alt="" />
                   </div>
 
                   <div class="post-prev-title font-alt">
-                      Serviço modelo de sustentabilidade
+                      {{ object.sustainable_method_title}}
                   </div>
 
                   <div class="post-prev-text">
-                      Maecenas  volutpat, diam enim sagittis quam, id porta quam. Sed id dolor
-                      consectetur fermentum nibh volutpat, accumsan purus.
+                      {{ object.sustainable_method_desc }}
                   </div>
 
               </div>
@@ -129,16 +127,15 @@
               <div class="col-sm-6 col-md-4 col-lg-4 mb-md-50 wow fadeIn" data-wow-delay="0.3s" data-wow-duration="2s">
 
                   <div class="post-prev-img">
-                      <img src="images/blog/post-prev-3.jpg" alt="" />
+                      <img src="{{ object.dev_img.url }}" alt="" />
                   </div>
 
                   <div class="post-prev-title font-alt">
-                      Desenvolvimento local
+                      {{ object.dev_method_title }}
                   </div>
 
                   <div class="post-prev-text">
-                      Maecenas  volutpat, diam enim sagittis quam, id porta quam. Sed id dolor
-                      consectetur fermentum nibh volutpat, accumsan purus.
+                      {{ object.dev_method_desc }}
                   </div>
 
               </div>
@@ -152,7 +149,7 @@
 
 
   <!-- Call Action Section -->
-  <section class="page-section pt-0 pb-0 banner-section bg-dark-alfa-30" data-background="images/beraca_sementes.jpg" id="portfolio">
+  <section class="page-section pt-0 pb-0 banner-section bg-dark-alfa-30" data-background="{% static 'images/beraca_sementes.jpg' %}" id="portfolio">
       <div class="container relative">
 
           <div class="row">
@@ -166,7 +163,7 @@
                               Atuamos em comunidades que complementar com o texto sobre a comunidade que atuamos e tudo o mais que fazemos na atuação.
                           </div>
                           <div class="local-scroll">
-                              <a href="cases.html" class="btn btn-mod btn-w btn-medium btn-round">Veja nosso portfólio</a>
+                              <a href="{% url 'core:cases' %}" class="btn btn-mod btn-w btn-medium btn-round">Veja nosso portfólio</a>
                           </div>
                       </div>
                   </div>

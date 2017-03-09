@@ -11,7 +11,7 @@
 
     <ul class="nav nav-tabs tpl-alt-tabs font-alt pt-30 pt-sm-0 pb-30 pb-sm-0">
       {% for service in services %}
-      <li class="active">
+      <li>
         <a href="#{{service.anchor}}" data-toggle="tab">
           <div class="alt-tabs-icon">
             <img src="{{service.icon.url}}">
@@ -25,31 +25,34 @@
     <!-- Tab panes -->
     <div class="tab-content tpl-tabs-cont">
       <!-- Service Item -->
-      <div class="tab-pane fade in active" id="{{service.anchor}}">
+      {% for tab in tabs %}
+      <div class="tab-pane fade" id="{{tab.anchor}}">
         <div class="section-text">
           <div class="row">
             <div class="col-md-4 mb-md-40 mb-xs-30">
               <blockquote class="mb-0">
                 <p>
-                  {{service.mention}}
+                  {{tab.mention}}
                 </p>
                 <footer>
-                  {{service.author}}
+                  {{tab.author}}
                 </footer>
               </blockquote>
             </div>
             <div class="col-md-4 col-sm-6 mb-sm-50 mb-xs-30">
-              {{service.abstract}}
+              {{tab.abstract}}
             </div>
             <div class="col-md-4 col-sm-6 mb-sm-50 mb-xs-30">
-              {{service.conclusion}}
+              {{tab.conclusion}}
             </div>
+
           </div>
         </div>
         <div class="align-center">
-          <a href="service-cadeia-produtiva.html" class="section-more font-alt"> Conheça mais <i class="fa fa-angle-right"></i></a>
+          <a href="{% url 'core:service_detail' tab.id %}" class="section-more font-alt"> Conheça mais <i class="fa fa-angle-right"></i></a>
         </div>
       </div>
+      {% endfor %}
       <!-- End Service Item -->
     </div>
     <!-- End Tab panes -->
