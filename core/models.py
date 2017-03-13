@@ -24,20 +24,20 @@ def generate_filename_miniature(self, filename):
 class PortfolioItem(models.Model):
     #common
 
-    title = models.CharField("Título", max_length=20, blank=False)
-    sub_title = models.CharField("Subtítulo", max_length=50, blank=False)
+    title = models.CharField("Título", max_length=300, blank=False)
+    sub_title = models.CharField("Subtítulo", max_length=300, blank=False)
 
     study = models.TextField('Estudo do caso', blank=True)
     results = models.TextField("Resultado", blank=True)
     experience = models.TextField("Experiência", blank=True)
 
-    client = models.CharField("Cliente", max_length=200, blank=False)
+    client = models.CharField("Cliente", max_length=300, blank=False)
     date = models.DateField(auto_now=True)
     online = models.CharField("URL do cliente", max_length=500, blank=True)
 
     #miniature
     miniature = models.ImageField("Miniatura", upload_to=generate_filename_miniature, blank=False)
-    tag = models.CharField("Tag para filtro", max_length=20, blank=False)
+    tag = models.CharField("Tag para filtro", max_length=300, blank=False)
     lat = models.CharField("Latitude", max_length=100, blank=True)
     lon = models.CharField("Longitude", max_length=100, blank=True)
 
@@ -79,8 +79,8 @@ def generate_filename_miniature(self, filename):
 class BlogPost(models.Model):
     #common
 
-    title = models.CharField("Título", max_length=20, blank=False)
-    sub_title = models.CharField("Sub-título", max_length=20, blank=False, null=True)
+    title = models.CharField("Título", max_length=300, blank=False)
+    sub_title = models.CharField("Sub-título", max_length=300, blank=False, null=True)
     intro = models.TextField("Introdução", blank=False)
     content = RichTextField("Corpo do texto", blank=False)
     date = models.DateField(auto_now=True)
@@ -88,7 +88,7 @@ class BlogPost(models.Model):
 
     #miniature
     miniature = models.ImageField("Miniatura", upload_to=generate_filename_miniature, blank=False)
-    tag = models.CharField("Tag para filtro", max_length=20, blank=False)
+    tag = models.CharField("Tag para filtro", max_length=300, blank=False)
 
     def __unicode__(self):
         return self.title
@@ -127,31 +127,14 @@ def generate_filename(self, filename):
 
 class ServiceItem(models.Model):
     #common
-    anchor = models.CharField("Âncora/Tab", max_length=200, blank=False)
+    anchor = models.CharField("Âncora/Tab", max_length=300, blank=False)
     icon = models.ImageField("Ícone", upload_to=generate_filename)
-    title = models.CharField("Título", max_length=200, blank=False)
+    title = models.CharField("Título", max_length=300, blank=False)
     mention = models.TextField('Citação', blank=True)
-    author = models.CharField("Autor", max_length=200, blank=False)
+    author = models.CharField("Autor", max_length=300, blank=False)
     abstract = models.TextField("Conceito", blank=True)
     conclusion = models.TextField("Conclusão", blank=True)
-
     description = models.TextField("Descrição", blank=True)
-    disc_icon = models.ImageField("Ícone Discussão", upload_to=generate_filename)
-    disc_title = models.CharField("Título da Discussão", max_length=200, blank=False)
-    plan_icon = models.ImageField("Ícone Planejamento", upload_to=generate_filename)
-    plan_title = models.CharField("Título do Planejamento", max_length=200, blank=False)
-    action_icon = models.ImageField("Ícone Ação", upload_to=generate_filename)
-    action_title = models.CharField("Título da Ação", max_length=200, blank=False)
-
-    method_img = models.ImageField("Imagem da Metodologia", upload_to=generate_filename)
-    method_title = models.CharField("Título da Metodologia", max_length=200, blank=False)
-    method_desc = models.CharField("Descrição da Metdologia", max_length=200, blank=False)
-    sustainable_img = models.ImageField("Imagem de Sustentabilidade", upload_to=generate_filename)
-    sustainable_method_title = models.CharField("Título da Sustentabilidade", max_length=20, blank=False)
-    sustainable_method_desc = models.CharField("Descrição da Sustentabilidade", max_length=200, blank=False)
-    dev_img = models.ImageField("Imagem de Desenvolvimento", upload_to=generate_filename)
-    dev_method_title = models.CharField("Título da Desenvolvimento", max_length=200, blank=False)
-    dev_method_desc = models.CharField("Descrição da Desenvolvimento", max_length=200, blank=False)
     date = models.DateField(auto_now=True)
 
     def __unicode__(self):
@@ -173,3 +156,21 @@ class ServiceItem(models.Model):
         verbose_name="Service/case"
         verbose_name_plural="Services"
         ordering = ['-date']
+
+
+class ServiceIcons(models.Model):
+    service = models.ForeignKey(ServiceItem, related_name='icones')
+    icon = models.ImageField("Ícone", upload_to=generate_filename, blank=True)
+    title = models.CharField("Título", max_length=300, blank=True)
+
+    def __unicode__(self):
+        return self.service.title
+
+class ServiceMethod(models.Model):
+    method = models.ForeignKey(ServiceItem, related_name='methods')
+    image = models.ImageField("Imagem", upload_to=generate_filename, blank=True)
+    title = models.CharField("Título", max_length=300, blank=True)
+    desc = models.TextField("Descrição", max_length=300, blank=True)
+
+    def __unicode__(self):
+        return self.method.title

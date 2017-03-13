@@ -14,12 +14,12 @@
     <!-- Main Menu -->
     <div class="inner-nav desktop-nav">
       <ul class="clearlist scroll-nav local-scroll">
-        <li class="active"><a href="#home">Home</a></li>
-        <li><a href="#about">Quem somos</a></li>
-        <li><a href="#services">O que fazemos</a></li>
-        <li><a href="#portfolio">Onde atuamos</a></li>
-        <li><a href="#news">Notícias</a></li>
-        <li><a href="#contact">Contatos</a></li>
+        <li class="active"><a href="{% url 'core:index' %}#home">Home</a></li>
+        <li><a href="{% url 'core:index' %}#about">Quem somos</a></li>
+        <li><a href="{% url 'core:index' %}#services">O que fazemos</a></li>
+        <li><a href="{% url 'core:index' %}#portfolio">Onde atuamos</a></li>
+        <li><a href="{% url 'core:index' %}#news">Notícias</a></li>
+        <li><a href="{% url 'core:index' %}#contact">Contatos</a></li>
       </ul>
     </div>
   </div>

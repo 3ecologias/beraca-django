@@ -24,7 +24,6 @@
   </section>
   <!-- End Head Section -->
 
-
   <!-- Features Section -->
   <section class="page-section">
       <div class="container relative">
@@ -42,41 +41,18 @@
                   </div>
               </div>
               <!-- End Text Item -->
-
+              {% for service in object.icones.all %}
               <!-- Features Item -->
               <div class="col-sm-3">
                   <div class="alt-features-item align-center">
                       <div class="alt-features-icon">
-                          <!-- <span class="icon-chat"></span> -->
-                          <img class="img-responsive" src="{{ object.disc_icon.url }}">
+                          <img class="img-responsive" src="{{ service.icon.url }}">
                       </div>
-                      <h3 class="alt-features-title font-alt">1. Discussões</h3>
+                      <h3 class="alt-features-title font-alt">1. {{ service.title }}</h3>
                   </div>
               </div>
               <!-- End Features Item -->
-
-              <!-- Features Item -->
-              <div class="col-sm-3">
-                  <div class="alt-features-item align-center">
-                      <div class="alt-features-icon">
-                          <img class="img-responsive" src="{{ object.plan_icon.url }}">
-                      </div>
-                      <h3 class="alt-features-title font-alt">2. Planejamento</h3>
-                  </div>
-              </div>
-              <!-- End Features Item -->
-
-              <!-- Features Item -->
-              <div class="col-sm-3">
-                  <div class="alt-features-item align-center">
-                      <div class="alt-features-icon">
-                          <img class="img-responsive" src="{{ object.action_icon.url }}">
-                      </div>
-                      <h3 class="alt-features-title font-alt">3. Ação</h3>
-                  </div>
-              </div>
-              <!-- End Features Item -->
-
+              {% endfor %}
          </div>
          <!-- End Features Grid -->
 
@@ -84,65 +60,27 @@
          <hr class="mb-70 mb-xs-30"/>
          <!-- End Divider -->
 
-
          <div class="row multi-columns-row">
-
+              {% for method in object.methods.all %}
               <!-- Post Item -->
               <div class="col-sm-6 col-md-4 col-lg-4 mb-md-50 wow fadeIn" data-wow-delay="0.1s" data-wow-duration="2s">
 
                   <div class="post-prev-img">
-                      <img src="{{ object.method_img.url }}" alt="" />
+                      <img src="{{ method.image.url }}" alt="" />
                   </div>
 
                   <div class="post-prev-title font-alt">
-                      {{ object.method_title }}
+                      {{ method.title }}
                   </div>
 
                   <div class="post-prev-text">
-                      {{ object.method_desc }}
+                      {{ method.desc }}
                   </div>
 
               </div>
               <!-- End Post Item -->
-
-              <!-- Post Item -->
-              <div class="col-sm-6 col-md-4 col-lg-4 mb-md-50 wow fadeIn" data-wow-delay="0.2s" data-wow-duration="2s">
-
-                  <div class="post-prev-img">
-                      <img src="{{ object.sustainable_img.url }}" alt="" />
-                  </div>
-
-                  <div class="post-prev-title font-alt">
-                      {{ object.sustainable_method_title}}
-                  </div>
-
-                  <div class="post-prev-text">
-                      {{ object.sustainable_method_desc }}
-                  </div>
-
-              </div>
-              <!-- End Post Item -->
-
-              <!-- Post Item -->
-              <div class="col-sm-6 col-md-4 col-lg-4 mb-md-50 wow fadeIn" data-wow-delay="0.3s" data-wow-duration="2s">
-
-                  <div class="post-prev-img">
-                      <img src="{{ object.dev_img.url }}" alt="" />
-                  </div>
-
-                  <div class="post-prev-title font-alt">
-                      {{ object.dev_method_title }}
-                  </div>
-
-                  <div class="post-prev-text">
-                      {{ object.dev_method_desc }}
-                  </div>
-
-              </div>
-              <!-- End Post Item -->
-
+              {% endfor %}
           </div>
-
       </div>
   </section>
   <!-- End Features Section -->

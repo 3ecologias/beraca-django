@@ -18,7 +18,17 @@ class BlogAdmin(admin.ModelAdmin):
     inlines = [ PostsImagesInline, ]
     save_as = True
 
+class ServiceIconsInline(admin.TabularInline):
+    model = ServiceIcons
+    extra = 3
+
+class ServiceMethodInline(admin.TabularInline):
+    model = ServiceMethod
+    extra = 3
+
+class ServiceAdmin(admin.ModelAdmin):
+    inlines = [ ServiceIconsInline, ServiceMethodInline, ]
 
 admin.site.register(PortfolioItem, PortfolioAdmin)
 admin.site.register(BlogPost, BlogAdmin)
-admin.site.register(ServiceItem)
+admin.site.register(ServiceItem, ServiceAdmin)
