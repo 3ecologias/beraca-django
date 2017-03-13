@@ -170,7 +170,7 @@ class ServiceMethod(models.Model):
     method = models.ForeignKey(ServiceItem, related_name='methods')
     image = models.ImageField("Imagem", upload_to=generate_filename, blank=True)
     title = models.CharField("Título", max_length=300, blank=True)
-    desc = models.TextField("Descrição", max_length=300, blank=True)
+    desc = models.TextField("Descrição", max_length=1500, blank=True)
 
     def __unicode__(self):
         return self.method.title
