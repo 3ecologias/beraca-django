@@ -1707,7 +1707,7 @@ a.logo:hover{
 .mobile-on .desktop-nav ul{
     width: 100%;
     float: none;
-    background: rgba(18,18,18, .97);
+    background: rgba(18,18,18, .77);
     position: relative;
     overflow-x: hidden;
 }
@@ -1737,7 +1737,7 @@ a.logo:hover{
     border-left: none;
     border-right: none;
     border-bottom: 1px solid rgba(255,255,255, .065);
-    color: #999;
+    color: #999!important;
     letter-spacing: 1px;
     cursor: pointer;
 }
@@ -1886,7 +1886,7 @@ a.logo:hover{
  .main-nav.white .mobile-nav{
      background-color: transparent;
      border-color: transparent;
-     color: rgba(255,255,255, .9);
+     color: #777;
  }
  .main-nav.white .mobile-nav:hover,
  .main-nav.white .mobile-nav.active{
@@ -2413,7 +2413,7 @@ a.logo:hover{
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 
-    padding: 140px 0;
+    padding: 135px 0;
 }
 .small-section{
     padding: 70px 0;
@@ -3169,7 +3169,7 @@ a.logo:hover{
     color: #111;
 }
 .alt-features-icon img{
-    width: 100%;
+    /*width: 100%;*/
 }
 .alt-features-title{
     margin-bottom: 21px;
@@ -6508,4 +6508,8 @@ section:hover .small-item-carousel .owl-next{
   height: 50vh;
   margin-bottom: 1em;
   margin-right: 3em;
+}
+
+.partner {
+  width: 5em;
 }
