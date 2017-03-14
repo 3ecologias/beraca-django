@@ -7,7 +7,7 @@
   {% endblock navigation %}
 
   <!-- Head Section -->
-  <section class="page-section bg-dark-alfa-30 parallax-2" data-background="images/beraca_aloe_vera.jpg">
+  <section class="page-section bg-dark-alfa-30 parallax-2" data-background="{% static 'images/beraca_aloe_vera.jpg' %}">
       <div class="relative container align-left">
 
           <div class="row">
@@ -32,23 +32,25 @@
           <div class="row alt-features-grid mb-70 mb-xs-40">
 
               <!-- Text Item -->
-              <div class="col-sm-3">
+              <div class="col-sm-8 col-sm-offset-2">
                   <div class="alt-features-item align-center">
-                      <div class="alt-features-descr align-left">
+                      <div class="alt-features-descr align-center">
                           <h4 class="mt-0 font-alt">{{ object.title}}</h4>
                           {{ object.description}}
                       </div>
                   </div>
               </div>
-              <!-- End Text Item -->
+          </div>
+          <!-- End Text Item -->
+          <div class="row alt-features-grid mb-70 mb-xs-40">
               {% for service in object.icones.all %}
               <!-- Features Item -->
               <div class="col-sm-3">
                   <div class="alt-features-item align-center">
-                      <div class="alt-features-icon">
+                      <center class="alt-features-icon">
                           <img class="img-responsive" src="{{ service.icon.url }}">
-                      </div>
-                      <h3 class="alt-features-title font-alt">1. {{ service.title }}</h3>
+                      </center>
+                      <h3 class="alt-features-title font-alt">{{ service.title }}</h3>
                   </div>
               </div>
               <!-- End Features Item -->
@@ -115,61 +117,6 @@
       </div>
   </section>
   <!-- End Call Action Section -->
-
-
-  <!-- Section -->
-  <section class="page-section" id="about">
-      <div class="container relative">
-
-          <div class="section-text mb-60 mb-sm-40">
-              <div class="row">
-
-                  <div class="col-sm-6 mb-sm-50 mb-xs-30">
-
-                      <h4 class="mt-0 font-alt">Porque trabalhar conosco?</h4>
-
-                      <p>
-                          Oferecemos, consectetur adipiscing elit. In maximus ligula semper metus pellentesque mattis. Maecenas  volutpat, diam enim sagittis quam.
-                          Aliquam elementum tellus non erat porttitor mollis. Morbi viverra sollicitudin nisl eu sodales.
-                      </p>
-                      <p>
-                          Etiam sit amet fringilla lacus. Pellentesque suscipit ante at ullamcorper pulvinar neque porttitor. Integer lectus. Praesent sed nisi eleifend, fermentum orci amet, iaculis libero.
-                      </p>
-                  </div>
-
-                  <div class="col-sm-6 mb-sm-50 mb-xs-30">
-
-                      <!-- Accordion -->
-                      <dl class="accordion">
-                          <dt>
-                              <a href=""><i class="fa fa-users"></i> Aproximação comunitária</a>
-                          </dt>
-                          <dd>
-                              Lorem ipsum dolor sit amet, consectetur adipiscing elit quam lectus, facilisis auctor, ultrices ut, elementum vulputate, nunc.
-                          </dd>
-                          <dt>
-                              <a href=""><i class="fa fa-clock-o"></i> Pontualidade com os cronogramas</a>
-                          </dt>
-                          <dd>
-                              Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci. Aenean dignissim pellentesque felis.
-                          </dd>
-                          <dt>
-                              <a href=""><i class="fa fa-heart"></i> Amigáveis, acima de tudo!</a>
-                          </dt>
-                          <dd>
-                              Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus hendrerit. Pellentesque aliquet nibh nec urna.
-                          </dd>
-                      </dl>
-                      <!-- End Accordion -->
-
-                  </div>
-
-              </div>
-          </div>
-
-      </div>
-  </section>
-  <!-- End Section -->
 
 
   {% block footer %}
