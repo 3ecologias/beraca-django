@@ -1459,7 +1459,7 @@ a.btn-mod:focus{
     transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000);
 }
 .nav-logo-wrap .logo img{
-    max-height: 92%;
+    max-height: 75%;
 }
 .nav-logo-wrap .logo:before,
 .nav-logo-wrap .logo:after{
@@ -6523,6 +6523,10 @@ section:hover .small-item-carousel .owl-next{
   position: fixed;
   bottom: 1.5em;
   z-index: 9999;
+}
+
+.scrollDown a {
+  margin-left: 20px;
 }
 
 .tab-pane {
