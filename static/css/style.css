@@ -2981,7 +2981,8 @@ a.logo:hover{
 
 }
 .team-item{
-
+  position: relative;
+  top: 4em;
 }
 .team-item-image{
     position: relative;
@@ -3019,6 +3020,7 @@ a.logo:hover{
     font-size: 14px;
     font-weight: 400;
     color: #777;
+    background: rgba(255, 255, 255, 0.69);
     text-align: center;
     z-index: 2;
 
@@ -3038,6 +3040,9 @@ a.logo:hover{
     transition: all 0.27s cubic-bezier(0.000, 0.000, 0.580, 1.000);
 }
 
+.team-core {
+  min-height: 39vh;
+}
 .team-item-descr{
     color: #777;
     text-align:center;
@@ -4237,7 +4242,7 @@ a.logo:hover{
 }
 
 a.link-to-top{
-    position: absolute;
+    position: fixed;
     bottom: 20px;
     right: 20px;
     width: 40px;
@@ -4351,7 +4356,7 @@ a.link-to-top{
 }
 
 .blog-item-more{
-    border: 1px solid #eaeaea;
+    border: 0px solid #eaeaea;
     padding: 5px 10px;
     font-size: 12px;
     font-weight: 400;
@@ -4966,8 +4971,8 @@ table.shopping-cart-table tr td{
     width: 100%;
     position: absolute;
     bottom: 30px;
-    left: 0;
-    text-align: center;
+    right: 6em;
+    text-align: right;;
 }
 .owl-page{
     display: inline-block;
@@ -4975,16 +4980,16 @@ table.shopping-cart-table tr td{
     position: relative;
 }
 .owl-page span{
-    width: 6px;
-    height: 6px;
+    width: 10px;
+    height: 10px;
     display: block;
     background: rgba(255,255,255, .7);
     position: relative;
     z-index: 1000 !important;
 
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    border-radius: 1px;
 
     -webkit-box-shadow: 1px 1px 0px rgba(0, 0, 0, .1);
     -moz-box-shadow: 1px 1px 0px rgba(0, 0, 0, .1);
@@ -6512,4 +6517,14 @@ section:hover .small-item-carousel .owl-next{
 
 .partner {
   width: 5em;
+}
+
+.scrollDown {
+  position: fixed;
+  bottom: 1.5em;
+  z-index: 9999;
+}
+
+.tab-pane {
+  color: #000;
 }
