@@ -1137,10 +1137,11 @@ function split_height_init(){
  Scroll down / by 3E
  --------------------------------------------- */
  function init_scrollDown(){
-     (function($){
-      $(".scrollDown").click(function(event){
-           $('html, body').animate({scrollTop: '+=800'}, 1200);
-       });
+     (
+      function($){
+      // $(".scrollDown").click(function(event){
+      //      $('html, body').animate({scrollTop: '+=800'}, 1200);
+      //  });
       var freqSecs = 5.2;
        setInterval (RepeatCall, freqSecs*1000);
 
