@@ -3011,7 +3011,7 @@ a.logo:hover{
 }
 
 .team-item-detail{
-    opacity: 0;
+    opacity: 1;
     width: 100%;
     position: absolute;
     top: 50%;
@@ -3185,7 +3185,7 @@ a.logo:hover{
 }
 .alt-features-descr {
     color: #777;
-    font-size: 14px;
+    font-size: 1.35em;
     font-weight: 400;
     line-height: 1.86
 }
@@ -6538,4 +6538,13 @@ section:hover .small-item-carousel .owl-next{
 #next{
   cursor: pointer;
   display: inline-block;
+}
+
+.modal {
+  font-size: 1.4em;
+  margin-top: 4em;
+}
+
+.modal-title {
+  1.8em;
 }
