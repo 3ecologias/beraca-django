@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'g8!s)#%ww*y2gjd%63dv43y3&@s7f4gf+80l%_&*cr)g=$$pdt'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'ckeditor',
 ]
 
-MIDDLEWARE = [
+MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -145,5 +145,5 @@ CKEDITOR_CONFIGS = {
 }
 
 ##EMAIL CONFIGS
-# Console 
+# Console
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

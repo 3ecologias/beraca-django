@@ -134,7 +134,7 @@ class ServiceItem(models.Model):
     author = models.CharField("Autor", max_length=300, blank=False)
     abstract = models.TextField("Conceito", blank=True)
     conclusion = models.TextField("Conclusão", blank=True)
-    description = models.TextField("Descrição", blank=True)
+    description = RichTextField("Descrição", blank=True)
     date = models.DateField(auto_now=True)
 
     def __unicode__(self):
