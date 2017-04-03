@@ -6534,3 +6534,8 @@ section:hover .small-item-carousel .owl-next{
 .tab-pane {
   color: #000;
 }
+
+#next{
+  cursor: pointer;
+  display: inline-block;
+}
