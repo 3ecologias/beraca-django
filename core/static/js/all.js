@@ -48,7 +48,7 @@
         init_map();
         init_wow();
         init_masonry();
-        init_scrollDown();
+//         init_scrollDown();
     });
 
     $(window).resize(function(){
@@ -1137,18 +1137,18 @@ function split_height_init(){
 /* ---------------------------------------------
  Scroll down / by 3E
  --------------------------------------------- */
- function init_scrollDown(){
-     (
-      function($){
-      // $(".scrollDown").click(function(event){
-      //      $('html, body').animate({scrollTop: '+=800'}, 1200);
-      //  });
-      var freqSecs = 5.2;
-       setInterval (RepeatCall, freqSecs*1000);
+//  function init_scrollDown(){
+//      (
+//       function($){
+//       // $(".scrollDown").click(function(event){
+//       //      $('html, body').animate({scrollTop: '+=800'}, 1200);
+//       //  });
+//       var freqSecs = 5.2;
+//        setInterval (RepeatCall, freqSecs*1000);
 
-      function RepeatCall() {
-        var inout = (freqSecs*1000)/2;
-        $(".scrollDown").fadeIn(inout).fadeOut(inout);
-      }
-     })(jQuery);
- }
+//       function RepeatCall() {
+//         var inout = (freqSecs*1000)/2;
+//         $(".scrollDown").fadeIn(inout).fadeOut(inout);
+//       }
+//      })(jQuery);
+//  }
