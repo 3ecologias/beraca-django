@@ -6554,3 +6554,18 @@ section:hover .small-item-carousel .owl-next{
   background: -webkit-linear-gradient(to right, #ff6a00, #ee0979);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #ff6a00, #ee0979); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
+.blog-header-background:before, .blog-header-background .YTPOverlay:before{
+  content: " ";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(211, 131, 18, 0.7);
+  background: -webkit-linear-gradient(to right, rgba(211, 131, 18, 0.7), rgba(168, 50, 121, 0.7));
+  background: linear-gradient(to right, rgba(211, 131, 18, 0.7), rgba(168, 50, 121, 0.7));
+}
+
+.white-text{
+  color: white;
+}
