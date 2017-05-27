@@ -1,5 +1,23 @@
 {% extends 'core/base.html' %}
 
+{% block social_meta %}
+    <meta property="og:title" content="{{ object.title }}" />
+    {% for image in object.images.all%}
+    <meta property="og:image" content="{% url 'core:index' %}/{{ image.image.url }}" />
+    {% endfor %}
+    <meta property="og:description" content="{{object.intro}}">
+    <meta property="og:site_name" content="Instituto Beraca"/>
+    <meta property="og:url" content="{% url 'core:index' %}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <meta name="twitter:title" content="{{ object.title }}" />
+    {% for image in object.images.all|slice:":10" %}
+    <meta name="twitter:image" content="{% url 'core:index' %}/{{ image.image.url }}" />
+    {% endfor %}
+    <meta name="twitter:url" content="{% url 'core:index' %}" />
+    <meta name="twitter:card" content="" />
+{% endblock social_meta %}
+
 {% block content %}
   {% include 'core/partials/navpanel_with_links.html' %}
   {% include 'core/partials/blog_header.html' %}
