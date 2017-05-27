@@ -3,18 +3,18 @@
 {% block social_meta %}
     <meta property="og:title" content="{{ object.title }}" />
     {% for image in object.images.all%}
-    <meta property="og:image" content="{% url 'core:index' %}/{{ image.image.url }}" />
+    <meta property="og:image" content="http://www.institutoberaca.org/{{ image.image.url }}" />
     {% endfor %}
-    <meta property="og:url" content="{% url 'core:index' %}" />
+    <meta property="og:url" content="http://www.institutoberaca.org/{% url 'core:post_detail' post.id %}" />
     <meta property="og:site_name" content="Instituto Beraca"/>
     <meta property="og:description" content="{{object.intro}}">
     <meta property="og:type" content="article" />
     <meta property="og:locale" content="en_US" />
     <meta name="twitter:title" content="{{ object.title }}" />
     {% for image in object.images.all|slice:":10" %}
-    <meta name="twitter:image" content="{% url 'core:index' %}/{{ image.image.url }}" />
+    <meta name="twitter:image" content="http://www.institutoberaca.org/{{ image.image.url }}" />
     {% endfor %}
-    <meta name="twitter:url" content="{% url 'core:index' %}" />
+    <meta name="twitter:url" content="http://www.institutoberaca.org/" />
     <meta name="twitter:card" content="" />
 {% endblock social_meta %}
 
