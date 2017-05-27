@@ -5,7 +5,7 @@
     {% for image in object.images.all%}
     <meta property="og:image" content="http://www.institutoberaca.org/{{ image.image.url }}" />
     {% endfor %}
-    <meta property="og:url" content="http://www.institutoberaca.org/{% url 'core:post_detail' post.id %}" />
+    <meta property="og:url" content="{% url 'core:post_detail' object.id %}" />
     <meta property="og:site_name" content="Instituto Beraca"/>
     <meta property="og:description" content="{{object.intro}}">
     <meta property="og:type" content="article" />
