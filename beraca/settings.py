@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'g8!s)#%ww*y2gjd%63dv43y3&@s7f4gf+80l%_&*cr)g=$$pdt'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'core',
     'ckeditor',
+    'maintenance_mode'
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -49,6 +50,7 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'maintenance_mode.middleware.MaintenanceModeMiddleware',
 ]
 
 ROOT_URLCONF = 'beraca.urls'
@@ -147,3 +149,7 @@ CKEDITOR_CONFIGS = {
 ##EMAIL CONFIGS
 # Console
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+## MODO DE MANUTENCAO
+MAINTENANCE_MODE = False
+MAINTENANCE_MODE_TEMPLATE = 'core/maintenance.html'
