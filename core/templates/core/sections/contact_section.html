@@ -66,20 +66,27 @@
           {% csrf_token %}
           <div class="clearfix">
             <div class="cf-left-col">
+              {{form.non_field_errors}}
               <!-- Name -->
               <div class="form-group">
                 {{form.name}}
+                {{form.name.errors}}
               </div>
               <!-- Email -->
               <div class="form-group">
                 {{form.email}}
+                {{form.email.errors}}
               </div>
             </div>
             <div class="cf-right-col">
               <!-- Message -->
               <div class="form-group">
                 {{form.content}}
+                {{form.content.errors}}
               </div>
+            </div>
+            <div class="col-xs-12">
+              <center><div class="g-recaptcha" data-sitekey="6LdO5iQUAAAAAFpPlYgKE5FaPF6yvI5Kz82m3cA7"></div></center>
             </div>
           </div>
           <div class="clearfix">

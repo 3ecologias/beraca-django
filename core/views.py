@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from django.shortcuts import render, redirect, HttpResponseRedirect, HttpResponse
 from django.template.loader import get_template
 from django.contrib import messages
@@ -9,6 +10,11 @@ from .models import *
 from .forms import *
 import operator
 from django.db.models import Q
+from django.conf import settings
+import urllib
+import urllib2
+import json
+
 
 # Create your views here.
 # def fullsite(request):
@@ -31,7 +37,24 @@ class Index(FormView):
 		return context
 
 	def form_valid(self, form):
-		form.send_email()
+		''' Begin reCAPTCHA validation '''
+		recaptcha_response = self.request.POST.get('g-recaptcha-response')
+		url = 'https://www.google.com/recaptcha/api/siteverify'
+		values = {
+			'secret': settings.GOOGLE_RECAPTCHA_SECRET_KEY,
+			'response': recaptcha_response
+        }
+		data = urllib.urlencode(values)
+		req = urllib2.Request(url, data)
+		response = urllib2.urlopen(req)
+		result = json.load(response)
+		''' End reCAPTCHA validation '''
+		print "hello"
+		if result['success']:
+			form.send_email()
+			messages.success(self.request, 'Seu contato foi enviado com sucesso!')
+		else:
+			messages.error(self.request, 'reCAPTCHA inválida. Por favor, tente novamente.')
 
 		return super(Index, self).form_valid(form)
 

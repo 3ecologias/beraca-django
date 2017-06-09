@@ -2,3 +2,4 @@ django
 Pillow
 django-ckeditor
 django-maintenance-mode
+sendgrid-django

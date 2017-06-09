@@ -25,7 +25,10 @@ SECRET_KEY = 'g8!s)#%ww*y2gjd%63dv43y3&@s7f4gf+80l%_&*cr)g=$$pdt'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+if DEBUG:
+    ALLOWED_HOSTS = ['*']
+else:
+    ALLOWED_HOSTS = ['www.institutoberaca.org', 'institutoberaca.org']
 
 
 # Application definition
@@ -147,9 +150,26 @@ CKEDITOR_CONFIGS = {
 }
 
 ##EMAIL CONFIGS
-# Console
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# Console [test purposes]
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+##EMAIL CONFIGURATION
+EMAIL_BACKEND = "sgbackend.SendGridBackend"
+SENDGRID_API_KEY = "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"
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_PORT = 587
+DEFAULT_FROM_EMAIL = 'contato@institutoberaca.org'
+# EMAIL_TO = 'contato@institutoberaca.org'
+EMAIL_TO = 'lucazartu@gmail.com'
+EMAIL_HOST_USER = '3ecologias'
+EMAIL_HOST_PASSWORD = 'm1c0leao'
+EMAIL_USE_TLS = True
 
 ## MODO DE MANUTENCAO
 MAINTENANCE_MODE = False
 MAINTENANCE_MODE_TEMPLATE = 'core/maintenance.html'
+MAINTENANCE_MODE_IGNORE_SUPERUSER = True
+
+## Captcha
+
+GOOGLE_RECAPTCHA_SECRET_KEY = '6LdO5iQUAAAAAFukEi4HkdCtgskVEmzgjABwD16N'
