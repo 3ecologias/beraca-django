@@ -14,10 +14,6 @@ from django.db.models import Q
 # def fullsite(request):
 # 	context_general = {}
 # 	return render(request, 'core/index.html', context_general)
-class Maintenance(TemplateView):
-	template_name = "core/maintenance.html"
-
-
 
 class Index(FormView):
 	template_name = "core/home.html"
