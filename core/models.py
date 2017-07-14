@@ -73,7 +73,8 @@ class PortfolioImages(models.Model):
         return self.portfolio.title
 
 def generate_filename_miniature(self, filename):
-    url = "Posts/miniaturas/%s/%s" % (self.title, filename)
+    title = self.title[:20]
+    url = "Posts/miniaturas/%s/%s" % (title, filename)
     return url
 
 class BlogPost(models.Model):
@@ -87,7 +88,7 @@ class BlogPost(models.Model):
     author = models.CharField("Autor", max_length=500, blank=True)
 
     #miniature
-    miniature = models.ImageField("Miniatura", upload_to=generate_filename_miniature, blank=False)
+    miniature = models.ImageField("Miniatura", upload_to=generate_filename_miniature, blank=False, max_length=255)
     tag = models.CharField("Tag para filtro", max_length=300, blank=False)
 
     def __unicode__(self):
