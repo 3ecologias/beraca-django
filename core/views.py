@@ -31,7 +31,7 @@ class Index(FormView):
 		context.update({
 			'slide_itens': Fullwidth_slider_item.objects.all(),
 			'posts': BlogPost.objects.all().order_by('-date')[:3],
-			'services': ServiceItem.objects.all().order_by('-date')[:5],
+			'services': ServiceItem.objects.all().order_by('title')[:5],
 			'tabs': ServiceItem.objects.all().order_by('-date')[:5],
 		})
 		return context
