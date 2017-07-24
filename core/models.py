@@ -113,7 +113,7 @@ class BlogPost(models.Model):
 
 def generate_filename(self, filename):
     title = self.post.title[:20]
-    url = "Posts/%s/%s" % (self.post.title, filename)
+    url = "Posts/%s/%s" % (title, filename)
     return url
 
 class BlogImages(models.Model):
