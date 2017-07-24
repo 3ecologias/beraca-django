@@ -112,6 +112,7 @@ class BlogPost(models.Model):
         ordering = ['-date']
 
 def generate_filename(self, filename):
+    title = self.title[:20]
     url = "Posts/%s/%s" % (self.post.title, filename)
     return url
 
