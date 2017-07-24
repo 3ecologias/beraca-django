@@ -84,7 +84,7 @@ class BlogPost(models.Model):
     sub_title = models.CharField("Sub-título", max_length=300, blank=False, null=True)
     intro = models.TextField("Introdução", blank=False)
     content = RichTextField("Corpo do texto", blank=False)
-    date = models.DateField(auto_now=True)
+    date = models.DateTimeField(auto_now=True)
     updated_at = models.DateTimeField(auto_now_add=True)
     author = models.CharField("Autor", max_length=500, blank=True)
 
