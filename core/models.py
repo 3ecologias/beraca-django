@@ -110,7 +110,7 @@ class BlogPost(models.Model):
     class Meta:
         verbose_name="Blog post"
         verbose_name_plural="Posts"
-        ordering = ['-date']
+        ordering = ['-updated_at']
 
 def generate_filename(self, filename):
     title = self.post.title[:20]
