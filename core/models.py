@@ -85,7 +85,7 @@ class BlogPost(models.Model):
     intro = models.TextField("Introdução", blank=False)
     content = RichTextField("Corpo do texto", blank=False)
     date = models.DateTimeField(auto_now=True)
-    updated_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now_add=True, null=True)
     author = models.CharField("Autor", max_length=500, blank=True)
 
     #miniature

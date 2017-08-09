@@ -28,7 +28,7 @@
                 <span class="date-num">{{post.date|date:"d"}}</span>{{post.date|date:"M"}}
               </div>
               <!-- Post Title -->
-              <h2 class="blog-item-title font-alt"><a href="blog-single-sidebar-right.html">{{post.title}}</a></h2>
+              <h2 class="blog-item-title font-alt"><a href="{% url 'core:post_detail' post.id %}">{{post.title}}</a></h2>
               <!-- Author, Categories, Comments -->
               <div class="blog-item-data">
                 <i class="fa fa-user"></i> {{post.author}}
