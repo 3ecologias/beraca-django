@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'g8!s)#%ww*y2gjd%63dv43y3&@s7f4gf+80l%_&*cr)g=$$pdt'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 if DEBUG:
     ALLOWED_HOSTS = ['*']
@@ -40,9 +40,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
     'core',
     'ckeditor',
-    'maintenance_mode'
+    'maintenance_mode',
+
+    'robots'
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -76,6 +80,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'beraca.wsgi.application'
 
+SITE_ID = 1
 
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
@@ -85,7 +90,7 @@ WSGI_APPLICATION = 'beraca.wsgi.application'
 #         'ENGINE': 'django.db.backends.sqlite3',
 #         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #     }
-# }
+ #}
 
 DATABASES = {
     'default': {

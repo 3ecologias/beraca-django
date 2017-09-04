@@ -3,3 +3,5 @@ Pillow
 django-ckeditor
 django-maintenance-mode
 sendgrid-django
+psycopg2
+django-robots
