@@ -19,7 +19,7 @@
             <div class="col-sm-6 col-md-4 col-lg-4 mb-md-50 wow fadeIn" data-wow-delay="0.1s" data-wow-duration="2s">
 
                 <div class="post-prev-img">
-                    <a href="{% url 'core:post_detail' post.id %}"><img src="{{post.miniature.url}}" alt="" /></a>
+                    <a href="{% url 'core:post_detail' post.id %}"><img src="{{post.miniature.url}}" alt="{{post.title}}" /></a>
                 </div>
 
                 <div class="post-prev-title font-alt">

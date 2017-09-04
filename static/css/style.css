@@ -124,6 +124,10 @@ Section Text:       15px/1.7 "Open Sans", sans-serif;
     border-radius: 2px !important;
 }
 
+.height-84 {
+  height: 84px;
+}
+
 ::-moz-selection{ color: #fff; background:#000; }
 ::-webkit-selection{ color: #fff;    background:#000; }
 ::selection{ color: #fff;    background:#000; }
@@ -6568,4 +6572,9 @@ section:hover .small-item-carousel .owl-next{
 
 .white-text{
   color: white;
+}
+
+.form-left-5000 {
+  position: absolute;
+  left: -5000px;
 }

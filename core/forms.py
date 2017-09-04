@@ -15,7 +15,7 @@ class ContactUs(forms.Form):
 
     content = forms.CharField(required=True,
     widget=forms.Textarea(
-        attrs={'class':'input-md round form-control', 'style':'height: 84px;', 'placeholder':'MENSAGEM', 'id':'message'}))
+        attrs={'class':'input-md round form-control height-84', 'placeholder':'MENSAGEM', 'id':'message'}))
 
     def send_email(self):
         email_template = get_template('core/email_template.html')

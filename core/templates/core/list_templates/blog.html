@@ -39,7 +39,7 @@
                 <ul class="clearlist content-slider">
                   {% for image in post.images.all %}
                     <li>
-                      <img src="{{image.image.url}}" alt="" />
+                      <img src="{{image.image.url}}" alt="{{post.title}}" />
                     </li>
                   {% endfor %}
                 </ul>

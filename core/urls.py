@@ -23,11 +23,10 @@ urlpatterns = [
     url(r'^blog/$', views.BlogListView.as_view(), name='blog'),
     url(r'^blog/detail/(?P<pk>\d+)$', views.BlogDetailView.as_view(), name='post_detail'),
     url(r'^services/detail/(?P<pk>\d+)$', views.ServiceDetailView.as_view(), name='service_detail'),
-    url(r'^robots.txt$', include('robots.urls')),
+    url(r'^robots.txt', include('robots.urls')),
     url(r'^sitemap\.xml$', sitemap, {'sitemaps': sitemaps},
     name='django.contrib.sitemaps.views.sitemap')
 ]
-
 
 urlpatterns += staticfiles_urlpatterns()
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

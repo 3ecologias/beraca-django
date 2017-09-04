@@ -5,3 +5,4 @@ django-maintenance-mode
 sendgrid-django
 psycopg2
 django-robots
+python-memcached
