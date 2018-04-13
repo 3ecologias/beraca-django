@@ -88,29 +88,29 @@ SITE_ID = 1
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#     }
-#  }
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'beracawebsite',
-        'USER': 'beraca',
-        'PASSWORD': 'Tatub0la',
-        'HOST': 'localhost',
-        'PORT': '',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
-}
+ }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'beracawebsite',
+#         'USER': 'beraca',
+#         'PASSWORD': 'Tatub0la',
+#         'HOST': 'localhost',
+#         'PORT': '',
+#     }
+# }
 
 
 # CACHE settings
-CACHE_MIDDLEWARE_ALIAS = 'cache_ib'
+CACHE_MIDDLEWARE_ALIAS = "cache_ib"
 CACHE_MIDDLEWARE_SECONDS = 300
-CACHE_MIDDLEWARE_KEY_PREFIX = 'IB'
+CACHE_MIDDLEWARE_KEY_PREFIX = "IB"
 
 CACHES = {
     'default': {

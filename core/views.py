@@ -61,6 +61,9 @@ class Index(FormView):
 class AboutView(TemplateView):
     template_name = "core/about.html"
 
+class ProjectView(TemplateView):
+    template_name = "core/project.html"
+
 class CasesView(TemplateView):
 	template_name = "core/cases.html"
 
