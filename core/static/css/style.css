@@ -649,6 +649,8 @@ a.btn-mod:focus{
     height: auto;
     padding: 8px 37px;
     font-size: 1.4em;
+    margin-left: 1em;
+    margin-bottom: 1em;
 }
 .btn-mod.btn-large{
     height: auto;
@@ -6568,4 +6570,58 @@ section:hover .small-item-carousel .owl-next{
 
 .white-text{
   color: white;
+}
+
+.page-header {
+  border:0px;
+}
+.page-header .motto {
+  text-align: center;
+  z-index: 3;
+  color: #fff;
+  position: relative;
+  margin-top: 20em;
+}
+
+@media only screen and (max-width: 480px) {
+  .page-header .motto {
+    margin-top: 7em;
+  }
+  .pt-1 {
+    padding-top: 1em;
+  }
+}
+
+.page-header .filter::after {
+  content: "";
+  display: block;
+  height: 100%;
+  left: 0;
+  top: 0;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  background: #40E0D0;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #FF008099, #FF8C0099, #40E0D099);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #FF008099, #FF8C0099, #40E0D099); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.sm-video-wrapper{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 0;
+}
+
+.sm-video-wrapper video{
+    max-width: inherit;
+    height: inherit;
+    z-index: 0;
+}
+
+.p-110-cont {
+    padding-top: 110px;
+    padding-bottom: 110px;
 }

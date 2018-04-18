@@ -48,6 +48,8 @@
         init_map();
         init_wow();
         init_masonry();
+        initImgHeight();
+
 //         init_scrollDown();
     });
 
@@ -1134,6 +1136,16 @@ function split_height_init(){
 
     })(jQuery);
 }
+
+/* ---------------------------------------------
+ Height 100%
+ --------------------------------------------- */
+function initImgHeight(){
+  (function($){
+    $(".js-height-fullscr").height($(window).height());
+  })(jQuery);
+}
+
 /* ---------------------------------------------
  Scroll down / by 3E
  --------------------------------------------- */

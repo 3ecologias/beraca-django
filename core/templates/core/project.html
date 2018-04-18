@@ -1,105 +1,50 @@
 {% extends 'core/base.html' %}
 {% load staticfiles %}
-
+{% block extrascripts %}
+<script>
+$(document).ready(function() {
+  if (!($("html").hasClass("mobile"))) {
+    var videobackground = new $.backgroundVideo($('.sm-video-reparte'), {
+      "align": "centerXY",
+      "width": 1920,
+      "height": 1080,
+      "path": "../static/video/",
+      "filename": "ReparteBR",
+      "types": ["mp4", "webm"],
+      "autoplay": true,
+      "loop": true
+    });
+  }
+});
+</script>
+{% endblock extrascripts %}
 {% block content %}
 
 {% include 'core/partials/navpanel_with_links.html' %}
 <!-- Head Section -->
-<section class="page-section bg-dark-alfa-30 parallax-2" data-background="{% static 'images/quemsomos.jpg' %}">
-    <div class="relative container align-left">
-        <div class="row">
-            <div class="col-md-8">
-                <h1 class="hs-line-11 font-alt mb-20 mb-xs-0">Apoie Um Projeto</h1>
-                <div class="hs-line-4 font-alt">
-                    O que nos compõe é a nossa história
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- End Head Section -->
-<!-- About Section -->
-<section class="page-section" id="about">
-    <div class="container relative">
-        <div class="section-text mb-60 mb-sm-40">
-            <div class="row">
-                <center class="col-sm-8 col-sm-offset-2 mb-sm-50 mb-xs-30">
-                    <h4 class="mt-0 font-alt">Governança corporativa e transparência</h4>
-                    <p>
-                      O Instituto Beraca inicia seus trabalhos no ano de 2016, com um Conselho Deliberativo composto principalmente por sócios e funcionários da Beraca e pretende, até o final de 2017, ampliar tanto número e a diversidade de seu Conselho para fortalecê-lo, quanto o rol de parceiros que atuem pela sua missão. Ainda que composto por pessoas ligadas à holding do Grupo Sabará, os conselheiros são de diversas áreas de formação: administração, sustentabilidade e relações internacionais.
-                    </p>
-                    <p>
-                      O Conselho Deliberativo se reúne duas vezes ao ano para realizar o planejamento estratégico do Instituto e para a prestação de contas, acompanhado pelo Conselho Fiscal. Há um Comitê Executivo do Conselho Deliberativo, composto pelo CEO da Beraca, Daniel Sabará, e o Gerente de Sustentabilidade da Beraca, Thiago Terada, que se reúne regularmente com a gestora executiva do Instituto Beraca. Durante todo o processo, o Conselho Deliberativo se mantém informado das ações do Instituto através de nossos meios de comunicação - website, Facebook e Instagram, e-mails e reuniões informais com os conselheiros.
-                    </p>
-                    <p>
-                      A comunicação do Instituto Beraca com stakeholders tem como seu marco zero o lançamento do seu website e paginas nas redes sociais, em de Abril de 2017. É uma instituição pequena e aberta, que acolhe demandas de informações de qualquer ator social (via e-mail ou telefone), e se presta a dar resposta na medida da sua capacidade de recursos humanos. As contas do Instituto Beraca estão sempre à disposição para consulta de interessados.
-                    </p>
-                    <p>
-                      É comum haver questionamento sobre conflitos de interesse entre a atuação da Beraca e do Instituto Beraca nos territórios. O Instituto Beraca acredita que a parceria com a empresa Beraca é positiva, uma vez alavanca o potencial do Instituto de fomentar cadeias produtivas que envolvem comunidades tradicionais em biomas ameaçados. Acreditamos que a forma de mantermos a floresta de pé é gerar renda a partir da exploração de produtos florestais não madeireiros, e a parceria com a Beraca permite projetos de geração de renda com compra garantida. No entanto, a relação de parceria comercial é negociada à parte, e as comunidades sempre têm a opção de vender ou não seus produtos para a Beraca.
-                    </p>
-                </center>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- End About Section -->
-
-<!-- Testimonials Section -->
-<section class="page-section bg-color-alfa-30 team-core" data-background="{% static 'images/debora_goldemberg.jpg' %}">
-  <div class="container absolute">
-    <div class="row">
-      <div class="col-sm-12 col-md-12 col-lg-12 mb-sm-30">
-        <div class="team-item">
-          <div class="team-item-detail">
-            <div class="row">
-                <!-- Col -->
-                <div class="col-sm-8 col-sm-offset-2">
-                  <!-- Nav Tabs -->
-                    <div class="align-center mb-40 mb-xxs-30">
-                      <ul class="nav nav-tabs tpl-minimal-tabs animate">
-                        <li class="active">
-                          <a href="#deborah" data-toggle="tab">Deborah Goldemberg</a>
-                        </li>
-                        <li>
-                          <a href="#conselho" data-toggle="tab">Conselho Gestor</a>
-                        </li>
-                      </ul>
-                    </div>
-                  <!-- End Nav Tabs -->
-                  <!-- Tab panes -->
-                    <div class="tab-content tpl-minimal-tabs-cont section-text align-center">
-                      <div class="tab-pane fade in active" id="deborah">
-                        Antropóloga e Mestre em Desenvolvimento pela London School of Economics, Deborah trabalha com desenvolvimento comunitário há duas décadas, tendo vivido no Nordeste do Brasil e atuado na Amazônia por muitos anos. É especialista em planejamento participativo e desenvolvimento local, com foco em geração de renda e sustentabilidade, inclusive com povos tradicionais. Tem também ampla experiência com avaliação de impacto social e responsabilidade social corporativa. Trabalhou em agências internacionais (ONU/Banco Mundial), no setor privado e em organizações não-governamentais.
-                      </div>
-                      <div class="tab-pane fade" id="conselho">
-                        <strong>Presidente:</strong> Ulisses Matiolli Sabará</br>
-                        <strong>Vice Presidente:</strong> Daniel Nose Sabará</br>
-                        <strong>Diretor Financeiro:</strong> Wellington Santos Rodgério</br>
-                        <strong>Conselho Fiscal</strong></br>
-                        Junior Pereira Ramos, Fabio Licastro, Ronison Martins Porto</br>
-                        <strong>Suplência do Conselho Fiscal</strong></br>
-                        Ana Maria Rédua Giamarino, Daniela Aparecida Diamente Bierast, José Roberto do Nascimento</br>
-                      </div>
-                    </div>
-                  </div>
-                  <!-- End Col -->
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+<div class="page-header">
+  <div class="container js-height-fullscr">
+  <div class="sm-video-wrapper">
+    <div class="sm-video-reparte"></div>
+  </div>
+  <div class="filter"></div>
+    <div class="motto text-center">
+      <h1>Encontre comunidades para repartir benefícios</h1>
+      <h3>Acesse projetos de alto impacto socioambiental</h3>
+      <br />
+      <div class="scroll-nav local-scroll">
+          <a href="http://projetos.institutoberaca.org/login" class="btn btn-mod btn-border-w btn-medium btn-round">Login</a>
+          <a href="#rb" class="btn btn-mod btn-border-w btn-medium btn-round">Saiba mais</a>
       </div>
-</section>
-<!-- End Testimonials Section -->
+    </div>
+  </div>
+</div>
 
-<!-- Divider -->
-<hr class="mt-0 mb-0 "/>
-<!-- End Divider -->
 <!-- Story Section -->
-<section class="page-section">
-    <div class="container relative">
-        <h2 class="section-title font-alt mb-70 mb-sm-40">
-            Conheça nosso ponto de vista
+<section class="page-section" id="rb">
+    <div class="container relative mb-60 mb-sm-40">
+        <h2 class="section-title font-alt mt-70 mb-70 mb-sm-40">
+            Repartição de Benefícios
         </h2>
         <!-- Our Story -->
         <div class="row">
@@ -109,13 +54,13 @@
                 <div class="align-center mb-40 mb-xxs-30">
                     <ul class="nav nav-tabs tpl-minimal-tabs animate">
                         <li class="active">
-                            <a href="#mini-one" data-toggle="tab">Missão</a>
+                            <a href="#mini-one" data-toggle="tab">O que é</a>
                         </li>
                         <li>
-                            <a href="#mini-two" data-toggle="tab">Visão</a>
+                            <a href="#mini-two" data-toggle="tab">Banco de Projetos</a>
                         </li>
                         <li>
-                            <a href="#mini-three" data-toggle="tab">Valores</a>
+                            <a href="#mini-three" data-toggle="tab">Consultoria</a>
                         </li>
                     </ul>
                 </div>
@@ -123,18 +68,19 @@
                 <!-- Tab panes -->
                 <div class="tab-content tpl-minimal-tabs-cont section-text align-center">
                     <div class="tab-pane fade in active" id="mini-one">
-                        A missão do Instituto Beraca é sonhar transformação social conjuntamente com comunidades vulneráveis e, através do acesso a mercados diferenciados, ativar economias locais sustentáveis que garantam a preservação e restauração do meio ambiente, a continuidade da diversidade cultural e o resgate da dignidade humana impactada pela pobreza.
+                        O acesso ao patrimônio genético, conhecimento tradicional associado e repartição de benefícios é regulado por lei internacional e nacional. O Instituto Beraca orienta os interessados em entrar em concordância com os requerimentos da lei.
                     </div>
                     <div class="tab-pane fade" id="mini-two">
-                      “A melhor coisa que se pode fazer pelo próximo não é apenas dividir com ele suas riquezas, mas revelar-lhe as dele mesmo.”
-                      <br>Benjamin Disraeli (escritor e primeiro-ministro do Reino Unido em 1868 e entre 1874 e 1880)
-		</div>
+                      O Instituto Beraca mantém um banco de projetos elaborados a partir de planejamento participativo em diversos territórios, para que seja feito um investimento de forma mais pertinente para as comunidades e atinja seu impacto socioambiental desejado.
+		                </div>
                     <div class="tab-pane fade" id="mini-three">
-                      Empatia e respeito ao outro
-                      <br>Empreendedorismo e resiliência
-                      <br>Respeito à diversidade humana e cultural
-                      <br>Ética e transparência
-		</div>
+                      Auxilia no Conhecimento Prévio Fundamentado (PIC) e no Termo de Acordo Mútuo (MAT).
+                      <br>Localiza projetos em comunidades com Conhecimento Tradicional Associado (CTA).
+                      <br>Organiza o escopo do projeto e o seu plano de ação.
+                      <br>Executa o plano de ação e participa do projeto na comunidade.
+                      <br>Monitora os projetos na comunidade através de relatórios analíticos.
+                      <br>Avalia a execução do projeto e realiza apresentação de resultados.
+		                </div>
                 </div>
             </div>
             <!-- End Col -->
@@ -149,7 +95,7 @@
     <div class="container relative">
 
         <div class="align-center">
-            <h3 class="banner-heading font-alt">Quer conversar com a gente?</h3>
+            <h3 class="banner-heading font-alt">Deseja solicitar um cadastro?</h3>
             <div>
                 <a href="{% url 'core:index' %}#contact" class="btn btn-mod btn-w btn-medium btn-round">É rápido</a>
             </div>
