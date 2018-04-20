@@ -6578,7 +6578,7 @@ section:hover .small-item-carousel .owl-next{
   position: relative;
 }
 
-.page-header .motto {
+.page-header-video .motto {
   text-align: center;
   z-index: 3;
   color: #fff;
@@ -6587,7 +6587,7 @@ section:hover .small-item-carousel .owl-next{
 }
 
 @media only screen and (max-width: 480px) {
-  .page-header .motto {
+  .page-header-video .motto {
     margin-top: 7em;
   }
   .pt-1 {
@@ -6595,7 +6595,7 @@ section:hover .small-item-carousel .owl-next{
   }
 }
 
-.page-header .filter::after {
+.page-header-video .filter::after {
   content: "";
   display: block;
   height: 100%;
