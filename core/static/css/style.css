@@ -6572,9 +6572,12 @@ section:hover .small-item-carousel .owl-next{
   color: white;
 }
 
-.page-header {
-  border:0px;
+.page-header-video {
+  border: 0px;
+  overflow: hidden;
+  position: relative;
 }
+
 .page-header .motto {
   text-align: center;
   z-index: 3;
