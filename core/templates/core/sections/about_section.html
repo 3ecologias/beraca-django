@@ -1,26 +1,28 @@
 <!-- About Section -->
+{% if about_section %}
 <section class="page-section" id="about">
+  {% for content in about_section %}
   <div class="container relative">
     <h2 class="section-title font-alt align-left mb-70 mb-sm-40">
-      Quem Somos
+      {{ content.title }}
     </h2>
     <div class="section-text mb-50 mb-sm-20">
       <div class="row">
         <div class="col-md-4">
           <blockquote>
             <p>
-              A melhor coisa que se pode fazer pelo próximo não é apenas dividir com ele suas riquezas, mas revelar-lhe as dele mesmo.
+              {{ content.mention }}
             </p>
             <footer>
-              Benjamin Disraeli
+              {{ content.author }}
             </footer>
           </blockquote>
         </div>
         <div class="col-md-4 col-sm-6 mb-sm-50 mb-xs-30">
-          O Instituto Beraca surge dentro da operação da Beraca, empresa líder em fornecimento de ingredientes naturais e orgânicos compostos de ativos extraídos da Amazônia e de outros biomas brasileiros.
+          {{ content.first_content|safe }}
         </div>
         <div class="col-md-4 col-sm-6 mb-sm-50 mb-xs-30">
-          Nossa missão é sonhar a transformação social conjuntamente com comunidades vulneráveis e, através do acesso a mercados diferenciados, ativar economias locais sustentáveis que garantam a preservação e restauração do meio ambiente, a continuidade da diversidade cultural e o resgate da dignidade humana impactada pela pobreza.
+          {{ content.second_content|safe }}
         </div>
       </div>
     </div>
@@ -28,4 +30,6 @@
       <a href="/about" class="section-more font-alt"><button type="submit" class="submit_btn btn btn-mod btn-medium btn-round">Conheça o Instituto Beraca</button></i></a>
     </div>
   </div>
+  {% endfor %}
 </section>
+{% endif %}

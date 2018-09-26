@@ -29,6 +29,14 @@ class ServiceMethodInline(admin.TabularInline):
 class ServiceAdmin(admin.ModelAdmin):
     inlines = [ ServiceIconsInline, ServiceMethodInline, ]
 
+class AboutSectionInline(admin.TabularInline):
+    model = AboutSection
+
+class AboutInternalInline(admin.TabularInline):
+    model = AboutInternal
+
 admin.site.register(PortfolioItem, PortfolioAdmin)
 admin.site.register(BlogPost, BlogAdmin)
 admin.site.register(ServiceItem, ServiceAdmin)
+admin.site.register(AboutSection)
+admin.site.register(AboutInternal)

@@ -177,3 +177,35 @@ class ServiceMethod(models.Model):
 
     def __unicode__(self):
         return self.method.title
+
+class AboutSection(models.Model):
+    title = models.CharField("Título", max_length=300, blank=True)
+    mention = models.TextField('Citação', blank=True)
+    author = models.CharField("Autor", max_length=300, blank=True)
+    first_content = RichTextField("Primeiro Paragrafo", blank=True)
+    second_content = RichTextField("Segundo Paragrafo", blank=True)
+
+    class Meta:
+        verbose_name = "Textos para seção 'Sobre'"
+        verbose_name_plural = "Textos para seção 'Sobre'"
+
+    def __unicode__(self):
+        return self.title
+
+class AboutInternal(models.Model):
+    title = models.CharField("Título da Header", max_length=300, blank=True)
+    subtitle = models.CharField("Subtítulo", max_length=300, blank=True)
+    title_paragraph = models.CharField("Título do Paragrafo", max_length=300, blank=True)
+    content = RichTextField("Descrição Geral", blank=True)
+    director = RichTextField("Sobre diretoria", blank=True)
+    council = RichTextField("Conselho Gestor", blank=True)
+    mission = RichTextField("Missão", blank=True)
+    vision = RichTextField("Visão", blank=True)
+    values = RichTextField("Valores", blank=True)
+
+    class Meta:
+        verbose_name = "Textos para seção interna 'Sobre'"
+        verbose_name_plural = "Textos para seção interna 'Sobre'"
+
+    def __unicode__(self):
+        return self.title

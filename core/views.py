@@ -6,7 +6,7 @@ from django.views.generic.base import TemplateView
 from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
 from django.views.generic.edit import FormView
-from .models import *
+from .models import Fullwidth_slider_item, BlogPost, ServiceItem, AboutSection, PortfolioItem, AboutInternal
 from .forms import *
 import operator
 from django.db.models import Q
@@ -33,6 +33,7 @@ class Index(FormView):
 			'posts': BlogPost.objects.all().order_by('-date')[:3],
 			'services': ServiceItem.objects.all().order_by('title')[:5],
 			'tabs': ServiceItem.objects.all().order_by('-date')[:5],
+			'about_section': AboutSection.objects.all(),
 		})
 		return context
 
@@ -57,9 +58,6 @@ class Index(FormView):
 			messages.error(self.request, 'reCAPTCHA inválida. Por favor, tente novamente.')
 
 		return super(Index, self).form_valid(form)
-
-class AboutView(TemplateView):
-    template_name = "core/about.html"
 
 class ProjectView(TemplateView):
     template_name = "core/project.html"
@@ -106,3 +104,14 @@ class BlogDetailView(DetailView):
 class ServiceDetailView(DetailView):
 	template_name = "core/detail_templates/service_detail.html"
 	model = ServiceItem
+
+class AboutInternalView(TemplateView):
+    template_name = 'core/about.html'
+    model = AboutInternal
+
+    def get_context_data(self, **kwargs):
+        context = super(AboutInternalView, self).get_context_data(**kwargs)
+        context.update({
+            'about_internal': AboutInternal.objects.all()
+        })
+        return context

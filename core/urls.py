@@ -7,7 +7,7 @@ from django.views.generic.base import TemplateView
 
 from django.contrib.sitemaps.views import sitemap
 
-from core.views import AboutView, ProjectView
+from core.views import AboutInternalView, ProjectView
 
 from .sitemaps import StaticViewSitemap
 
@@ -17,7 +17,7 @@ sitemaps = {
 
 urlpatterns = [
     url(r'^$', views.Index.as_view(), name='index'),
-    url(r'^about/$', views.AboutView.as_view(), name='about'),
+    url(r'^about/$', views.AboutInternalView.as_view(), name='about'),
     url(r'^apoieumprojeto/$', views.ProjectView.as_view(), name='project'),
     url(r'^cases/$', views.CasesView.as_view(), name='cases'),
     url(r'^cases/detail/(?P<pk>\d+)$', views.CaseDetailView.as_view(), name='detail'),
@@ -30,4 +30,5 @@ urlpatterns = [
 ]
 
 urlpatterns += staticfiles_urlpatterns()
+
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
