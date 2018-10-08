@@ -1,5 +1,5 @@
 {% extends 'core/base.html' %}
-{% load staticfiles %}
+{% load staticfiles i18n %}
 
   {% block extrastyles %}
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
@@ -20,9 +20,9 @@
     <div class="relative container align-left">
       <div class="row">
         <div class="col-md-8">
-          <h1 class="hs-line-11 font-alt mb-20 mb-xs-0">Portfólio de ações</h1>
+          <h1 class="hs-line-11 font-alt mb-20 mb-xs-0">{% trans "Portfólio de ações" %}</h1>
           <div class="hs-line-4 font-alt">
-            Atuamos com foco no desenvolvimento local sustentável
+            {% trans "Atuamos com foco no desenvolvimento local sustentável" %}
           </div>
         </div>
       </div>
@@ -34,7 +34,7 @@
   <section class="page-section">
     <div class="container relative">
       <!-- Map Section -->
-	<iframe src="https://www.google.com/maps/d/embed?mid=1acO1dlXVfFnmrkozGzhummj7g-k" width="100%" height="400px"></iframe> <br><br>       
+	<iframe src="https://www.google.com/maps/d/embed?mid=1acO1dlXVfFnmrkozGzhummj7g-k" width="100%" height="400px"></iframe> <br><br>
 
 <!--
       <div class="row">
@@ -93,9 +93,9 @@
     <section class="small-section bg-yellow-dg">
       <div class="container relative">
         <div class="align-center">
-          <h3 class="banner-heading font-alt">Gostou do nosso trabalho?</h3>
+          <h3 class="banner-heading font-alt">{% trans "Gostou do nosso trabalho?" %}</h3>
           <div>
-            <a href="{% url 'core:index' %}#contact" class="btn btn-mod btn-w btn-medium btn-round">Converse conosco!</a>
+            <a href="{% url 'core:index' %}#contact" class="btn btn-mod btn-w btn-medium btn-round">{% trans "Converse conosco!" %}</a>
           </div>
         </div>
       </div>

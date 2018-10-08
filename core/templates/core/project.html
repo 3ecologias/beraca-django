@@ -1,5 +1,5 @@
 {% extends 'core/base.html' %}
-{% load staticfiles %}
+{% load staticfiles i18n %}
 {% block extrascripts %}
 <script>
 $(document).ready(function() {
@@ -29,12 +29,12 @@ $(document).ready(function() {
   </div>
   <div class="filter"></div>
     <div class="motto text-center">
-      <h1>Encontre comunidades para repartir benefícios</h1>
-      <h3>Acesse projetos de alto impacto socioambiental</h3>
+      <h1>{% trans "Encontre comunidades para repartir benefícios" %}</h1>
+      <h3>{% trans "Acesse projetos de alto impacto socioambiental" %}</h3>
       <br />
       <div class="scroll-nav local-scroll">
           <a href="https://projetos.institutoberaca.org/accounts/login" class="btn btn-mod btn-border-w btn-medium btn-round">Login</a>
-          <a href="#rb" class="btn btn-mod btn-border-w btn-medium btn-round">Saiba mais</a>
+          <a href="#rb" class="btn btn-mod btn-border-w btn-medium btn-round">{% trans "Saiba mais" %}</a>
       </div>
     </div>
   </div>
@@ -44,7 +44,7 @@ $(document).ready(function() {
 <section class="page-section" id="rb">
     <div class="container relative mb-60 mb-sm-40">
         <h2 class="section-title font-alt mt-70 mb-70 mb-sm-40">
-            Repartição de Benefícios
+            {% trans "Repartição de Benefícios" %}
         </h2>
         <!-- Our Story -->
         <div class="row">
@@ -54,13 +54,13 @@ $(document).ready(function() {
                 <div class="align-center mb-40 mb-xxs-30">
                     <ul class="nav nav-tabs tpl-minimal-tabs animate">
                         <li class="active">
-                            <a href="#mini-one" data-toggle="tab">O que é</a>
+                            <a href="#mini-one" data-toggle="tab">{% trans "O que é" %}</a>
                         </li>
                         <li>
-                            <a href="#mini-two" data-toggle="tab">Banco de Projetos</a>
+                            <a href="#mini-two" data-toggle="tab">{% trans "Banco de Projetos" %}</a>
                         </li>
                         <li>
-                            <a href="#mini-three" data-toggle="tab">Consultoria</a>
+                            <a href="#mini-three" data-toggle="tab">{% trans "Consultoria" %}</a>
                         </li>
                     </ul>
                 </div>
@@ -68,18 +68,18 @@ $(document).ready(function() {
                 <!-- Tab panes -->
                 <div class="tab-content tpl-minimal-tabs-cont section-text align-center">
                     <div class="tab-pane fade in active" id="mini-one">
-                        O acesso ao patrimônio genético, conhecimento tradicional associado e repartição de benefícios é regulado por lei internacional e nacional. O Instituto Beraca orienta os interessados em entrar em concordância com os requerimentos da lei.
+                        {% trans "O acesso ao patrimônio genético, conhecimento tradicional associado e repartição de benefícios é regulado por lei internacional e nacional. O Instituto Beraca orienta os interessados em entrar em concordância com os requerimentos da lei." %}
                     </div>
                     <div class="tab-pane fade" id="mini-two">
-                      O Instituto Beraca mantém um banco de projetos elaborados a partir de planejamento participativo em diversos territórios, para que seja feito um investimento de forma mais pertinente para as comunidades e atinja seu impacto socioambiental desejado.
+                      {% trans "O Instituto Beraca mantém um banco de projetos elaborados a partir de planejamento participativo em diversos territórios, para que seja feito um investimento de forma mais pertinente para as comunidades e atinja seu impacto socioambiental desejado." %}
 		                </div>
                     <div class="tab-pane fade" id="mini-three">
-                      Auxilia no Conhecimento Prévio Fundamentado (PIC) e no Termo de Acordo Mútuo (MAT).
-                      <br>Localiza projetos em comunidades com Conhecimento Tradicional Associado (CTA).
-                      <br>Organiza o escopo do projeto e o seu plano de ação.
-                      <br>Executa o plano de ação e participa do projeto na comunidade.
-                      <br>Monitora os projetos na comunidade através de relatórios analíticos.
-                      <br>Avalia a execução do projeto e realiza apresentação de resultados.
+                      {% trans "Auxilia no Conhecimento Prévio Fundamentado (PIC) e no Termo de Acordo Mútuo (MAT)." %}
+                      <br>{% trans "Localiza projetos em comunidades com Conhecimento Tradicional Associado (CTA)." %}
+                      <br>{% trans "Organiza o escopo do projeto e o seu plano de ação." %}
+                      <br>{% trans "Executa o plano de ação e participa do projeto na comunidade." %}
+                      <br>{% trans "Monitora os projetos na comunidade através de relatórios analíticos." %}
+                      <br>{% trans "Avalia a execução do projeto e realiza apresentação de resultados." %}
 		                </div>
                 </div>
             </div>
@@ -95,9 +95,9 @@ $(document).ready(function() {
     <div class="container relative">
 
         <div class="align-center">
-            <h3 class="banner-heading font-alt">Deseja solicitar um cadastro?</h3>
+            <h3 class="banner-heading font-alt">{% trans "Deseja solicitar um cadastro?" %}</h3>
             <div>
-                <a href="http://institutoberaca.org/#contact" class="btn btn-mod btn-w btn-medium btn-round">É rápido</a>
+                <a href="http://institutoberaca.org/#contact" class="btn btn-mod btn-w btn-medium btn-round">{% trans "É rápido" %}</a>
             </div>
         </div>
     </div>

@@ -6628,3 +6628,18 @@ section:hover .small-item-carousel .owl-next{
     padding-top: 110px;
     padding-bottom: 110px;
 }
+
+.form-lang {
+  position: fixed;
+  top: 10em;
+  right: 0.4em;
+}
+
+#form-lang {
+  display:none;
+}
+.btn-lang {
+  position: fixed;
+  top: 7em;
+  right: 0em;
+}

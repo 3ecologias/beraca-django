@@ -3,19 +3,20 @@ from django import forms
 from django.core.mail import send_mail, BadHeaderError, EmailMessage
 from django.conf import settings
 from django.template.loader import get_template
+from django.utils.translation import ugettext_lazy as _
 
 class ContactUs(forms.Form):
-    name = forms.CharField(required=True,
+    name = forms.CharField(required=False,
     widget=forms.TextInput(
-    attrs={'class':'input-md round form-control', 'placeholder':'NOME', 'pattern':'.{3,100}', 'id':'name'}))
+    attrs={'class':'input-md round form-control', 'placeholder':_('NOME'), 'pattern':'.{3,100}', 'id':'name'}))
 
-    email = forms.EmailField(required=True,
+    email = forms.EmailField(required=False,
     widget=forms.TextInput(
         attrs={'class':'input-md round form-control', 'placeholder':'EMAIL', 'pattern':'.{5,100}', 'id':'email'}))
 
-    content = forms.CharField(required=True,
+    content = forms.CharField(required=False,
     widget=forms.Textarea(
-        attrs={'class':'input-md round form-control height-84', 'placeholder':'MENSAGEM', 'id':'message'}))
+        attrs={'class':'input-md round form-control height-84', 'placeholder':_('MENSAGEM'), 'id':'message'}))
 
     def send_email(self):
         email_template = get_template('core/email_template.html')

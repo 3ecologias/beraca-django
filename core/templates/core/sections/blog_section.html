@@ -1,4 +1,4 @@
-{% load staticfiles %}
+{% load staticfiles i18n %}
 
 <!-- Blog Section -->
 {% if posts %}
@@ -6,9 +6,9 @@
     <div class="container relative">
 
         <h2 class="section-title font-alt align-left mb-70 mb-sm-40">
-            Notícias
+            {% trans "Notícias" %}
 
-            <a href="{% url 'core:blog' %}" class="section-more right">Veja todas as notícias <i class="fa fa-angle-right"></i></a>
+            <a href="{% url 'core:blog' %}" class="section-more right">{% trans "Veja todas as notícias" %} <i class="fa fa-angle-right"></i></a>
 
         </h2>
 
@@ -35,7 +35,7 @@
                 </div>
 
                 <div class="post-prev-more">
-                    <a href="{% url 'core:post_detail' post.id %}" class="btn btn-mod btn-gray btn-round">Leia mais <i class="fa fa-angle-right"></i></a>
+                    <a href="{% url 'core:post_detail' post.id %}" class="btn btn-mod btn-gray btn-round">{% trans "Leia mais" %}<i class="fa fa-angle-right"></i></a>
                 </div>
 
             </div>

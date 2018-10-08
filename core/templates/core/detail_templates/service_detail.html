@@ -1,5 +1,5 @@
 {% extends 'core/base.html' %}
-{% load staticfiles %}
+{% load staticfiles i18n %}
 
 {% block content %}
   {% block navigation %}
@@ -13,9 +13,9 @@
           <div class="row">
 
               <div class="col-md-8">
-                  <h1 class="hs-line-11 font-alt mb-20 mb-xs-0">O que fazemos</h1>
+                  <h1 class="hs-line-11 font-alt mb-20 mb-xs-0">{% trans "O que fazemos" %}</h1>
                   <div class="hs-line-4 font-alt">
-                      Aproximamos realidades locais e oportunidades
+                      {% trans "Aproximamos realidades locais e oportunidades" %}
                   </div>
               </div>
           </div>
@@ -98,12 +98,12 @@
 
                   <div class="mt-140 mt-lg-80 mb-140 mb-lg-80">
                       <div class="banner-content">
-                          <h3 class="banner-heading font-alt">onde atuamos</h3>
+                          <h3 class="banner-heading font-alt">{% trans "Onde atuamos" %}</h3>
                           <div class="banner-decription">
-                              Atuamos em comunidades visando o desenvolvimento socioambiental.
+                              {% trans "Atuamos em comunidades visando o desenvolvimento socioambiental." %}
                           </div>
                           <div class="local-scroll">
-                              <a href="{% url 'core:cases' %}" class="btn btn-mod btn-w btn-medium btn-round">Veja nosso portfólio</a>
+                              <a href="{% url 'core:cases' %}" class="btn btn-mod btn-w btn-medium btn-round">{% trans "Veja nosso portfólio" %}</a>
                           </div>
                       </div>
                   </div>

@@ -1,4 +1,4 @@
-{% load staticfiles %}
+{% load staticfiles i18n %}
 
 <!-- Call Action Section -->
 
@@ -8,12 +8,12 @@
       <div class="col-sm-6">
         <div class="mt-140 mt-lg-80 mb-140 mb-lg-80">
           <div class="banner-content">
-            <h3 class="banner-heading font-alt">Onde atuamos</h3>
+            <h3 class="banner-heading font-alt">{% trans "Onde atuamos" %}</h3>
             <div class="banner-decription">
-              Atuamos em comunidades visando o desenvolvimento socioambiental.
+              {% trans "Atuamos em comunidades visando o desenvolvimento socioambiental." %}
             </div>
             <div class="local-scroll">
-              <a href="{% url 'core:cases' %}" class="btn btn-mod btn-w btn-medium btn-round">Veja nosso portfólio</a>
+              <a href="{% url 'core:cases' %}" class="btn btn-mod btn-w btn-medium btn-round">{% trans "Veja nosso portfólio" %}</a>
             </div>
           </div>
         </div>

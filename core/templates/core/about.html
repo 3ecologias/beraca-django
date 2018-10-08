@@ -1,5 +1,5 @@
 {% extends 'core/base.html' %}
-{% load staticfiles %}
+{% load staticfiles i18n %}
 
 {% block content %}
 
@@ -50,20 +50,20 @@
                     <div class="align-center mb-40 mb-xxs-30">
                       <ul class="nav nav-tabs tpl-minimal-tabs animate">
                         <li class="active">
-                          <a href="#deborah" data-toggle="tab">Deborah Goldemberg</a>
+                          <a href="#director" data-toggle="tab">{% trans "Direção" %}</a>
                         </li>
                         <li>
-                          <a href="#conselho" data-toggle="tab">Conselho Gestor</a>
+                          <a href="#council" data-toggle="tab">{% trans "Conselho Gestor" %}</a>
                         </li>
                       </ul>
                     </div>
                   <!-- End Nav Tabs -->
                   <!-- Tab panes -->
                     <div class="tab-content tpl-minimal-tabs-cont section-text align-center">
-                      <div class="tab-pane fade in active" id="deborah">
+                      <div class="tab-pane fade in active" id="director">
                         {{ content.director|safe }}
                       </div>
-                      <div class="tab-pane fade" id="conselho">
+                      <div class="tab-pane fade" id="council">
                         {{ content.council|safe }}
                       </div>
                     </div>
@@ -85,7 +85,7 @@
 <section class="page-section">
     <div class="container relative">
         <h2 class="section-title font-alt mb-70 mb-sm-40">
-            Conheça nosso ponto de vista
+            {% trans "Conheça nosso ponto de vista" %}
         </h2>
         <!-- Our Story -->
         <div class="row">
@@ -95,13 +95,13 @@
                 <div class="align-center mb-40 mb-xxs-30">
                     <ul class="nav nav-tabs tpl-minimal-tabs animate">
                         <li class="active">
-                            <a href="#mini-one" data-toggle="tab">Missão</a>
+                            <a href="#mini-one" data-toggle="tab">{% trans "Missão" %}</a>
                         </li>
                         <li>
-                            <a href="#mini-two" data-toggle="tab">Visão</a>
+                            <a href="#mini-two" data-toggle="tab">{% trans "Visão" %}</a>
                         </li>
                         <li>
-                            <a href="#mini-three" data-toggle="tab">Valores</a>
+                            <a href="#mini-three" data-toggle="tab">{% trans "Valores" %}</a>
                         </li>
                     </ul>
                 </div>
@@ -132,9 +132,9 @@
     <div class="container relative">
 
         <div class="align-center">
-            <h3 class="banner-heading font-alt">Quer conversar com a gente?</h3>
+            <h3 class="banner-heading font-alt">{% trans "Quer conversar com a gente?" %}</h3>
             <div>
-                <a href="{% url 'core:index' %}#contact" class="btn btn-mod btn-w btn-medium btn-round">É rápido</a>
+                <a href="{% url 'core:index' %}#contact" class="btn btn-mod btn-w btn-medium btn-round">{% trans "É rápido" %}</a>
             </div>
         </div>
     </div>

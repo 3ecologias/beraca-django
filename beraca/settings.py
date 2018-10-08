@@ -34,7 +34,6 @@ else:
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -45,6 +44,9 @@ INSTALLED_APPS = [
     'core',
     'ckeditor',
     'maintenance_mode',
+    'clear_cache',
+    'modeltranslation',
+    'django.contrib.admin',
 
     'robots'
 ]
@@ -54,6 +56,7 @@ MIDDLEWARE_CLASSES = [
     'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -151,6 +154,14 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'pt-br'
 
+gettext = lambda s: s
+LANGUAGES = (
+    ('pt-br', gettext('Brazilian Portuguese')),
+    ('en', gettext('English')),
+)
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'pt-br'
+MODELTRANSLATION_LANGUAGES = ('pt-br', 'en')
+
 TIME_ZONE = 'America/Recife'
 
 USE_I18N = True
@@ -159,7 +170,9 @@ USE_L10N = True
 
 USE_TZ = True
 
-
+LOCALE_PATHS = [
+    os.path.join(BASE_DIR, 'locale')
+]
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 

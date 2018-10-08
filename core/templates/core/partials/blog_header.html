@@ -1,12 +1,12 @@
 <!-- Head Section -->
-{% load staticfiles %}
+{% load staticfiles i18n %}
 <section class="page-section blog-header-background parallax-2" data-background="{% static 'images/noticias.jpg' %}">
   <div class="relative container align-left">
     <div class="row">
       <div class="col-md-8">
-        <h1 class="hs-line-11 font-alt mb-20 mb-xs-0 white-text">Notícias</h1>
+        <h1 class="hs-line-11 font-alt mb-20 mb-xs-0 white-text">{% trans "Notícias" %}</h1>
         <div class="hs-line-4 font-alt">
-          Aqui compartilhamos nossas melhores histórias
+          {% trans "Aqui compartilhamos nossas melhores histórias" %}
         </div>
       </div>
     </div>

@@ -1,8 +1,9 @@
+{% load i18n %}
 <!-- Contact Section -->
 <section class="page-section" id="contact">
   <div class="container relative">
     <h2 class="section-title font-alt mb-70 mb-sm-40">
-      Contato
+      {% trans "Contato" %}
     </h2>
     <div class="row mb-30 mb-xs-40">
       <div class="col-md-8 col-md-offset-2">
@@ -93,14 +94,14 @@
             <div class="col-sm-12">
               <!-- Inform Tip -->
               <div class="form-tip pt-20 pb-20">
-                <i class="fa fa-info-circle"></i> Todos os campos são necessários
+                <i class="fa fa-info-circle"></i> {% trans "Todos os campos são necessários" %}
               </div>
             </div>
             <!-- Modal volunteer -->
             <div class="col-sm-3">
               <!-- Trigger the modal with a button -->
               <div class="align-center pt-10">
-                <button type="button" class="submit_btn btn btn-mod btn-medium btn-round" data-toggle="modal" data-target="#volunteer">Voluntariado</button>
+                <button type="button" class="submit_btn btn btn-mod btn-medium btn-round" data-toggle="modal" data-target="#volunteer">{% trans "Voluntariado" %}</button>
               </div>
               <!-- Modal -->
               <div id="volunteer" class="modal fade" role="dialog">
@@ -110,12 +111,12 @@
                   <div class="modal-content">
                     <div class="modal-header">
                       <button type="button" class="close" data-dismiss="modal">&times;</button>
-                      <h4 class="modal-title">Voluntariado</h4>
+                      <h4 class="modal-title">{% trans "Voluntariado" %}</h4>
                     </div>
                     <div class="modal-body">
-                      <p>O Instituto Beraca acredita na força do voluntariado para a realização de seus projetos comunitários e o avanço de sua missão. As pessoas que tiverem interesse em doar o seu tempo e o seu conhecimento técnico podem entrar em contato sinalizando o tipo de trabalho que realizam (seu know-how) e sua disponibilidade.</p>
-                      <p>Nossa proposta é que os voluntários contribuam na sua máxima potência num tema pertinente e prioritário para comunidades, por isso, o nosso ponto de partida é o perfil do voluntário. Um pintor de parede poderá contribuir pintando as paredes de uma escola, mas um CFO (Chief Financial Officer) pode e deve contribuir prestando consultoria para uma cooperativa que enfrenta dificuldades na área contábil.</p>
-                      <p>A partir disso, encontraremos demandas de comunidades e a vontade/perfil do voluntário a contribuir. Cada voluntário fará parte de um projeto de desenvolvimento comunitário integrado e poderá vislumbrar os resultados que está fazendo para o sonho de comunidades que vivem em biomas ameaçados.</p>
+                      <p>{% trans "O Instituto Beraca acredita na força do voluntariado para a realização de seus projetos comunitários e o avanço de sua missão. As pessoas que tiverem interesse em doar o seu tempo e o seu conhecimento técnico podem entrar em contato sinalizando o tipo de trabalho que realizam (seu know-how) e sua disponibilidade." %}</p>
+                      <p>{% trans "Nossa proposta é que os voluntários contribuam na sua máxima potência num tema pertinente e prioritário para comunidades, por isso, o nosso ponto de partida é o perfil do voluntário. Um pintor de parede poderá contribuir pintando as paredes de uma escola, mas um CFO (Chief Financial Officer) pode e deve contribuir prestando consultoria para uma cooperativa que enfrenta dificuldades na área contábil." %}</p>
+                      <p>{% trans "A partir disso, encontraremos demandas de comunidades e a vontade/perfil do voluntário a contribuir. Cada voluntário fará parte de um projeto de desenvolvimento comunitário integrado e poderá vislumbrar os resultados que está fazendo para o sonho de comunidades que vivem em biomas ameaçados." %}</p>
                       <p></p>
                     </div>
                     <div class="modal-footer">
@@ -129,7 +130,7 @@
             <div class="col-sm-3 col-sm-offset-1">
               <!-- Trigger the modal with a button -->
               <div class="align-center pt-10">
-                <button type="button" class="submit_btn btn btn-mod btn-medium btn-round" data-toggle="modal" data-target="#donation">Doações</button>
+                <button type="button" class="submit_btn btn btn-mod btn-medium btn-round" data-toggle="modal" data-target="#donation">{% trans "Doações" %}</button>
               </div>
               <!-- Modal -->
               <div id="donation" class="modal fade" role="dialog">
@@ -139,15 +140,15 @@
                   <div class="modal-content">
                     <div class="modal-header">
                       <button type="button" class="close" data-dismiss="modal">&times;</button>
-                      <h4 class="modal-title">Doações</h4>
+                      <h4 class="modal-title">{% trans "Doações" %}</h4>
                     </div>
                     <div class="modal-body">
                       <p>
-                        O Instituto Beraca é uma entidade da sociedade civil sem fins lucrativos. Se você tem vontade de contribuir para a missão do IB,
-                        mas não tem tempo para dedicar, pode contribuir financeiramente através de uma doação.
+                        {% blocktrans trimmed %} "O Instituto Beraca é uma entidade da sociedade civil sem fins lucrativos. Se você tem vontade de contribuir para a missão do IB,
+                        mas não tem tempo para dedicar, pode contribuir financeiramente através de uma doação." {% endblocktrans %}
                       </p>
                       <p>
-                        O monitoramento & avaliação dos resultados atingidos com sua doação serão apresentados anualmente para todos os doadores.
+                        {% trans "O monitoramento & avaliação dos resultados atingidos com sua doação serão apresentados anualmente para todos os doadores." %}
                       </p>
                     </div>
                     <div class="modal-footer">
@@ -163,7 +164,7 @@
             <div class="col-sm-2 col-sm-offset-1">
               <!-- Send Button -->
               <div class="align-center pt-10">
-                <button type="submit" class="submit_btn btn btn-mod btn-medium btn-round">Envie a mensagem</button>
+                <button type="submit" class="submit_btn btn btn-mod btn-medium btn-round">{% trans "Envie a mensagem" %}</button>
               </div>
 
             </div>
@@ -188,11 +189,12 @@
       <div id="mc_embed_signup">
       <form action="//3ecologias.us15.list-manage.com/subscribe/post?u=498468897c08c19f3661c3c6c&id=16c4a906f7" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
       <div id="mc_embed_signup_scroll">
-
-      <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Inscreva-se na nossa newsletter" required>
+      {% trans "Inscreva-se na nossa newsletter" as placeholder %}
+      {% trans "ENVIAR" as valuesend %}
+      <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="{% blocktrans %} {{ placeholder }} {% endblocktrans %}" required>
           <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
           <div class="form-left-5000" aria-hidden="true"><input type="text" name="b_498468897c08c19f3661c3c6c_16c4a906f7" tabindex="-1" value=""></div>
-          <div class="clear"><input type="submit" value="ENVIAR" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+          <div class="clear"><input type="submit" value="{% blocktrans %} {{ valuesend }} {% endblocktrans %}" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
           </div>
       </form>
       </div>

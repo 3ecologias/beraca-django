@@ -15,16 +15,33 @@
     <!-- Main Menu -->
     <div class="inner-nav desktop-nav">
       <ul class="clearlist scroll-nav local-scroll">
-        <li class="active"><a href="{% url 'core:index' %}#home">Home</a></li>
-        <li><a href="{% url 'core:index' %}#about">Quem somos</a></li>
-        <li><a href="{% url 'core:index' %}#services">O que fazemos</a></li>
-        <li><a href="{% url 'core:index' %}#portfolio">Onde atuamos</a></li>
-        <li><a href="{% url 'core:project' %}">Apoie um projeto</a></li>
-        <li><a href="{% url 'core:index' %}#news">Notícias</a></li>
-        <li><a href="{% url 'core:index' %}#contact">Contatos</a></li>
+        <li class="active"><a href="{% url 'core:index' %}#home">{% trans "Home" %}</a></li>
+        <li><a href="{% url 'core:index' %}#about">{% trans "Quem somos" %}</a></li>
+        <li><a href="{% url 'core:index' %}#services">{% trans "O que fazemos" %}</a></li>
+        <li><a href="{% url 'core:index' %}#portfolio">{% trans "Onde atuamos" %}</a></li>
+        <li><a href="{% url 'core:project' %}">{% trans "Apoie um projeto" %}</a></li>
+        <li><a href="{% url 'core:index' %}#news">{% trans "Notícias" %}</a></li>
+        <li><a href="{% url 'core:index' %}#contact">{% trans "Contatos" %}</a></li>
       </ul>
+    </div>
+    <button class="btn submit_btn btn-mod btn-lang" type="button" id="formButton"><i class="fa fa-globe fa-2x" aria-hidden="true"></i></button>
+    <div class="form-lang">
+      <form id="form-lang" class="form contact-form" action="{% url 'set_language' %}" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="next" value="{{request.path}}" />
+        <select name="language">
+          {% get_available_languages as LANGUAGES %}
+          {% get_language_info_list for LANGUAGES as languages %}
+          {% for language in languages %}
+            <option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %} selected {% endif %}>
+              {{ language.name_local }} ({{ language.code }})
+          </option>
+          {% endfor %}
+        </select>
+        <input class="btn submit_btn btn-mod" type="submit" value="Go" />
     </div>
   </div>
 
 </nav>
+
 <!-- End Navigation panel -->

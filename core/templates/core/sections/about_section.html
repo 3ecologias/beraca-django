@@ -1,3 +1,4 @@
+{% load i18n %}
 <!-- About Section -->
 {% if about_section %}
 <section class="page-section" id="about">
@@ -27,7 +28,7 @@
       </div>
     </div>
     <div class="align-center">
-      <a href="/about" class="section-more font-alt"><button type="submit" class="submit_btn btn btn-mod btn-medium btn-round">Conheça o Instituto Beraca</button></i></a>
+      <a href="{% url 'core:about' %}" class="section-more font-alt submit_btn btn btn-mod btn-medium btn-round">{% trans "Conheça o Instituto Beraca" %}</a>
     </div>
   </div>
   {% endfor %}

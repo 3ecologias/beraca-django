@@ -1,5 +1,5 @@
 {% extends 'core/base.html' %}
-
+{% load i18n %}
 {% block content %}
   {% block navigation %}
     {% include 'core/partials/navpanel.html' %}
@@ -39,7 +39,7 @@
           <!-- Features Item -->
           <div class="col-sm-6 col-md-4 col-lg-4">
             <div class="alt-features-item align-center">
-              <h3 class="alt-features-title font-alt">1. Estudo do caso</h3>
+              <h3 class="alt-features-title font-alt">1. {% trans "Estudo do caso" %}</h3>
               <div class="alt-features-descr align-left">
                 {{object.study}}
               </div>
@@ -50,7 +50,7 @@
           {% if object.results %}
             <div class="col-sm-6 col-md-4 col-lg-4">
               <div class="alt-features-item align-center">
-                <h3 class="alt-features-title font-alt">2. Resultado</h3>
+                <h3 class="alt-features-title font-alt">2. {% trans "Resultado" %}</h3>
                 <div class="alt-features-descr align-left">
                   {{object.results}}
                 </div>
@@ -62,7 +62,7 @@
           {% if object.experience %}
             <div class="col-sm-6 col-md-4 col-lg-4">
               <div class="alt-features-item align-center">
-                <h3 class="alt-features-title font-alt">3. Experiência</h3>
+                <h3 class="alt-features-title font-alt">3. {% trans "Experiência" %}</h3>
                 <div class="alt-features-descr align-left">
                   {{object.experience}}
                 </div>
@@ -79,14 +79,14 @@
             <div class="col-md-4 mb-sm-50 mb-xs-30">
               <!-- Project Detail -->
               <div class="work-detail">
-                <h5 class="font-alt mt-0 mb-20">Detalhes do projeto</h5>
+                <h5 class="font-alt mt-0 mb-20">{% trans "Detalhes do projeto" %}</h5>
                 <div class="work-full-detail">
                   <p>
-                    <strong>Cliente:</strong>
+                    <strong>{% trans "Cliente" %}:</strong>
                     {{object.client}}
                   </p>
                   <p>
-                    <strong>Data:</strong>
+                    <strong>{% trans "Data" %}:</strong>
                     {{object.date|date:"F"}}, {{object.date|date:"Y"}}
                   </p>
                 </div>
@@ -111,14 +111,14 @@
   <!-- Work Navigation -->
   <div class="work-navigation clearfix">
     {% if object.get_prev %}
-    <a href="{% url 'core:detail' object.get_prev.id %}" class="work-prev"><span><i class="fa fa-chevron-left"></i>&nbsp;Case Anterior</span></a>
+    <a href="{% url 'core:detail' object.get_prev.id %}" class="work-prev"><span><i class="fa fa-chevron-left"></i>&nbsp;{% trans "Case Anterior" %}</span></a>
     {% else %}
     <a class="work-prev">&nbsp;</a>
     {% endif %}
-    <a href="{% url 'core:cases' %}" class="work-all"><span><i class="fa fa-times"></i>&nbsp;Ver todos</span></a>
+    <a href="{% url 'core:cases' %}" class="work-all"><span><i class="fa fa-times"></i>&nbsp;{% trans "Ver todos" %}</span></a>
 
     {% if object.get_next %}
-    <a href="{% url 'core:detail' object.get_next.id %}" class="work-next"><span>Próximo case&nbsp;<i class="fa fa-chevron-right"></i></span></a>
+    <a href="{% url 'core:detail' object.get_next.id %}" class="work-next"><span>{% trans "Próximo case" %}&nbsp;<i class="fa fa-chevron-right"></i></span></a>
     {% else %}
     <a class="work-prev">&nbsp;</a>
     {% endif %}

@@ -49,6 +49,7 @@
         init_wow();
         init_masonry();
         initImgHeight();
+        init_lang_btn();
 
 //         init_scrollDown();
     });
@@ -479,8 +480,15 @@
         });
     }
 
+    /* ---------------------------------------------
+     Lang Button
+     --------------------------------------------- */
 
-
+    function init_lang_btn(){
+      $("#formButton").click(function(){
+              $("#form-lang").toggle();
+          });
+    }
 
     /* ---------------------------------------------
      Team

@@ -1,5 +1,5 @@
 {% extends 'core/base.html' %}
-
+{% load i18n %}
 {% block content %}
   {% include 'core/partials/navpanel_with_links.html' %}
   {% include 'core/partials/blog_header.html' %}
@@ -10,7 +10,8 @@
                 <button class="search-button animate" type="submit" title="Start Search">
                     <i class="fa fa-search"></i>
                 </button>
-                <input type="text" class="form-control search-field" name='search' placeholder="Procurar posts...">
+                {% trans "Procurar posts" as findposts %}
+                <input type="text" class="form-control search-field" name='search' placeholder="{% blocktrans %} {{ findposts }} {% endblocktrans %}">
             </div>
         </form>
     </div>
@@ -52,7 +53,7 @@
               </div>
               <!-- Read More Link -->
               <div class="blog-item-foot">
-                <a href="{% url 'core:post_detail' post.id %}" class="btn btn-mod btn-round  btn-small">Leia mais<i class="fa fa-angle-right"></i></a>
+                <a href="{% url 'core:post_detail' post.id %}" class="btn btn-mod btn-round  btn-small">{% trans "Leia mais" %}<i class="fa fa-angle-right"></i></a>
               </div>
 
             </div>

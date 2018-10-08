@@ -1,11 +1,11 @@
 {% extends 'core/base.html' %}
-
+{% load i18n %}
 {% block content %}
 <article>
-    <h1>Estaremos de volta em breve!</h1>
+    <h1>{% trans "Estaremos de volta em breve!" %}</h1>
     <div>
-        <p>Descupe pelo inconveniente, mas nós estamos realizando uma manutenção no momento.
-          Em breve estaremos de volta.
+        <p>{% trans "Descupe pelo inconveniente, mas nós estamos realizando uma manutenção no momento.
+          Em breve estaremos de volta." %}
         <p>&mdash; Instituto Beraca</p>
     </div>
 </article>

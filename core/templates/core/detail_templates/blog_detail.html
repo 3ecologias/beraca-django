@@ -1,5 +1,5 @@
 {% extends 'core/base.html' %}
-
+{% load i18n %}
 {% block social_meta %}
     <meta property="og:title" content="{{ object.title }}" />
     {% for image in object.images.all%}
@@ -61,10 +61,10 @@
           <!-- Prev/Next Post -->
           <div class="clearfix mt-40">
             {% if object.get_prev %}
-              <a href="{% url 'core:post_detail' object.get_prev.id %}" class="blog-item-more left"><button type="submit" class="submit_btn btn btn-mod btn-medium btn-round"><i class="fa fa-angle-left"></i>&nbsp;Notícia anterior</i></button></a>
+              <a href="{% url 'core:post_detail' object.get_prev.id %}" class="blog-item-more left"><button type="submit" class="submit_btn btn btn-mod btn-medium btn-round"><i class="fa fa-angle-left"></i>&nbsp;{% trans "Notícia anterior" %}</i></button></a>
             {% endif %}
             {% if object.get_next %}
-              <a href="{% url 'core:post_detail' object.get_next.id %}" class="blog-item-more right"><button type="submit" class="submit_btn btn btn-mod btn-medium btn-round">Próxima notícia&nbsp;<i class="fa fa-angle-right"></i></button></a>
+              <a href="{% url 'core:post_detail' object.get_next.id %}" class="blog-item-more right"><button type="submit" class="submit_btn btn btn-mod btn-medium btn-round">{% trans "Próxima notícia" %}&nbsp;<i class="fa fa-angle-right"></i></button></a>
             {% endif %}
           </div>
           <!-- End Prev/Next Post -->

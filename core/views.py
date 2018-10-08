@@ -14,6 +14,7 @@ from django.conf import settings
 import urllib
 import urllib2
 import json
+# from django.utils import translation
 
 
 # Create your views here.
@@ -58,6 +59,14 @@ class Index(FormView):
 			messages.error(self.request, 'reCAPTCHA inválida. Por favor, tente novamente.')
 
 		return super(Index, self).form_valid(form)
+
+	# from django.utils import translation
+	# user_language = 'en'
+	# translation.activate(user_language)
+	# request.session[translation.LANGUAGE_SESSION_KEY] = user_language
+
+	# if translation.LANGUAGE_SESSION_KEY in request.session:
+	# 	del request.session[translation.LANGUAGE_SESSION_KEY]
 
 class ProjectView(TemplateView):
     template_name = "core/project.html"
