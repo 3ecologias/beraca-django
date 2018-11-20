@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'g8!s)#%ww*y2gjd%63dv43y3&@s7f4gf+80l%_&*cr)g=$$pdt'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 if DEBUG:
     ALLOWED_HOSTS = ['*']
@@ -207,7 +207,7 @@ CKEDITOR_CONFIGS = {
 
 ##EMAIL CONFIGURATION
 EMAIL_BACKEND = "sgbackend.SendGridBackend"
-SENDGRID_API_KEY = "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"
+SENDGRID_API_KEY = ""
 EMAIL_HOST = 'smtp.sendgrid.net'
 EMAIL_PORT = 587
 DEFAULT_FROM_EMAIL = 'contato@institutoberaca.org'
